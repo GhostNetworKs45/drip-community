@@ -852,14 +852,14 @@ const Swap = ({ setOneTokenPrice }) => {
                           style={{ color: "#ab9769", fontSize: "20px" }}
                         >
                           {" "}
-                          {t("AVAX/Splash.1")} {division}
+                          {t("FTM/Splash.1")} {division}
                         </span>
                       </p>
                       <p
                         className="text-small fst-italic"
                         style={{ backgroundColor: "#30332f" }}
                       >
-                        {t("AVAX/Splash.1")} ≈ {oneDripPrice} {t("USDT.1")}
+                        {t("FTM/Splash.1")} ≈ {oneDripPrice} {t("USDT.1")}
                       </p>
                     </div>
                   </div>
@@ -870,7 +870,7 @@ const Swap = ({ setOneTokenPrice }) => {
                         className="mb-0 font-weight-semibold color-theme-1 mb-2 mt-3 fst-italic"
                         style={{ color: "#7c625a" }}
                       >
-                        {t("AVAXBalance.1")}
+                        {t("FTMBalance.1")}
                       </h5>
                       <p className="text-large mb-2 text-white fst-italic">
                         <span
@@ -884,7 +884,7 @@ const Swap = ({ setOneTokenPrice }) => {
                         className="text-small fst-italic"
                         style={{ backgroundColor: "#30332f" }}
                       >
-                        {t("AVAX.1")} ≈{bnbPrice} {t("USDT.1")}
+                        {t("FTM.1")} ≈{bnbPrice} {t("USDT.1")}
                       </p>
                     </div>
                   </div>
@@ -946,7 +946,7 @@ const Swap = ({ setOneTokenPrice }) => {
                             </div>
                             <div className="col-9 text-right fst-italic user2">
                               {" "}
-                              <p>{t("AVAXBalance.1")}:</p>
+                              <p>{t("FTMBalance.1")}:</p>
                               <p className="user-balance text-white fst-italic">
                                 {" "}
                                 {usersBalance}

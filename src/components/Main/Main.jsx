@@ -107,7 +107,7 @@ const Main = () => {
                 style={{ fontSize: "20px" }}
               >
                 {t(
-                  "TheofficialtokenoftheSplashNetworkisSplash(SPLASH)ontheAvalancheChain(AVAX)thatcapturesvaluebybeingscarce,deflationary,censorshipresistant,andbybeingbuiltonarobust,trulydecentralizedblockchain..1"
+                  "TheofficialtokenoftheSplashNetworkisSplash(SPLASH)ontheAvalancheChain(FTM)thatcapturesvaluebybeingscarce,deflationary,censorshipresistant,andbybeingbuiltonarobust,trulydecentralizedblockchain..1"
                 )}
               </div>
               <br />
@@ -177,7 +177,7 @@ const Main = () => {
                   style={{ fontSize: "20px" }}
                 >
                   {t(
-                    "TheSplashtokencapturestheentirevalueoftheSplashNetworkandmakesitavailabletotheentireAVAXCommunity.1"
+                    "TheSplashtokencapturestheentirevalueoftheSplashNetworkandmakesitavailabletotheentireFTMCommunity.1"
                   )}
                   !
                 </p>

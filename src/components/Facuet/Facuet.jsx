@@ -1294,7 +1294,7 @@ const Facuet = ({ oneTokenPrice }) => {
                         className="fst-italic"
                         style={{ color: "#7c625a", fontSize: "19px" }}
                       >
-                        {t("Price.1")} {oneTokenPrice} {t("AVAX.1")}/
+                        {t("Price.1")} {oneTokenPrice} {t("FTM.1")}/
                         {t("Splash.1")}
                       </span>{" "}
                     </div>

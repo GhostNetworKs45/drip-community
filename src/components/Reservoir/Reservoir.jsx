@@ -392,7 +392,7 @@ function Reservoir() {
                         className="text-small fst-italic"
                         style={{ backgroundColor: "#30332f" }}
                       >
-                        {t("AVAX.1")}
+                        {t("FTM.1")}
                       </p>
                     </div>
                   </div>
@@ -492,7 +492,7 @@ function Reservoir() {
                         className="text-small fst-italic"
                         style={{ backgroundColor: "#30332f" }}
                       >
-                        {t("AVAX.1")}
+                        {t("FTM.1")}
                       </p>
                     </div>
                   </div>
@@ -517,7 +517,7 @@ function Reservoir() {
                         className="text-small fst-italic"
                         style={{ backgroundColor: "#30332f" }}
                       >
-                        {t("AVAX.1")}
+                        {t("FTM.1")}
                       </p>
                     </div>
                   </div>
@@ -575,7 +575,7 @@ function Reservoir() {
                         className="d-flex justify-content-end fst-italic"
                         style={{ lineHeight: "10%" }}
                       >
-                        {t("AVAXBalance.1")}:
+                        {t("FTMBalance.1")}:
                         <label className="user-balance text-white fst-italic">
                           {userBnbBalance}
                         </label>
@@ -596,7 +596,7 @@ function Reservoir() {
                             {" "}
                             <p>{t("Price.1")}:</p>
                             <p className="user-balance text-white fst-italic">
-                              {t("AVAX.1")}/{t("Splash.1")}≈{bnbDripPrice}
+                              {t("FTM.1")}/{t("Splash.1")}≈{bnbDripPrice}
                             </p>
                           </div>
                         </div>
@@ -760,7 +760,7 @@ function Reservoir() {
                       {reward}
                     </span>
                   </p>
-                  <p className="text-small">{t("AVAX.1")}</p>
+                  <p className="text-small">{t("FTM.1")}</p>
                 </div>
               </div>
               <div className="container col-6 col-xl-4 col-lg-4 col-md-4 mt-3 text-center">
@@ -800,7 +800,7 @@ function Reservoir() {
                       style={{ color: "#ab9769", fontSize: "20px" }}
                     >
                       {" "}
-                      {contractBal} {t("AVAX.1")}
+                      {contractBal} {t("FTM.1")}
                     </span>
                   </p>
                   <p className="text-small">
