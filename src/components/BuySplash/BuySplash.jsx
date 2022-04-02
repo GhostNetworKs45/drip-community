@@ -337,7 +337,7 @@ function BuySplash() {
           </div>
 
           <div className="row mb-4 mt-2">
-            {/* <div className='row'>
+             <div className='row'>
                                 <div className='col' >
                                     <div className="card  text-white"
                                         style={{ backgroundColor: "#30332f" }}>
@@ -355,16 +355,16 @@ function BuySplash() {
                                                 </div>
                                                 <ui>
                                                     <li>{t("WalletMustbewhitelist.1")}</li>
-                                                    <li>{t("PresalePrice0.00605AVAX.1")}</li>
-                                                    <li>{t("ListingPrice0.03025AVAX.1")}</li>
-                                                    <li>{t("Max5AVAXperWallet.1")}</li>
+                                                    <li>{t("PresalePrice0.00605FTM.1")}</li>
+                                                    <li>{t("ListingPrice0.03025FTM.1")}</li>
+                                                    <li>{t("Max5FTMperWallet.1")}</li>
                                                 </ui>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div> */}
-            {/* <div className='row mt-3'>
+                            </div> 
+             <div className='row mt-3'>
                                 <div className='col'>
                                     <div className="card  text-white"
                                         style={{ backgroundColor: "#30332f" }}>
@@ -398,7 +398,7 @@ function BuySplash() {
                                                 <div className="row ">
                                                     <div className="col-6">
                                                         <p className="fst-italic" style={{ fontSize: "16px" }}>
-                                                            {t("HARDCAP650AVAX.1")}
+                                                            {t("HARDCAP650FTM.1")}
                                                         </p>
                                                     </div>
                                                     <div className="col-6 d-flex justify-content-end" >
@@ -413,7 +413,7 @@ function BuySplash() {
                                                 <div className="row ">
                                                     <div className="col-6">
                                                         <p className="fst-italic" style={{ fontSize: "16px" }}>
-                                                            {t("SOFTCAP360AVAX.1")}
+                                                            {t("SOFTCAP360FTM.1")}
                                                         </p>
                                                     </div>
                                                     <div className="col-6 d-flex justify-content-end" >
@@ -435,7 +435,7 @@ function BuySplash() {
                                         </div>
                                     </div>
                                 </div>
-                            </div> */}
+                            </div> 
 
             <div className="container col-12 col-xl-6 col-lg-6 mb-12">
               <div className="row">
@@ -497,7 +497,7 @@ function BuySplash() {
                           </div>
                         </div>
 
-                        {/* <form className="mt-5">
+                         <form className="mt-5">
                                                     <div id="buddy-input">
                                                         <fieldset className="form-group" id="__BVID__216">
                                                             <h3>
@@ -507,7 +507,7 @@ function BuySplash() {
                                                                     id="__BVID__216__BV_label_"
                                                                 >
                                                                     <p style={{ lineHeight: "40%" }}>
-                                                                        {t("AVAX.1")}
+                                                                        {t("FTM.1")}
                                                                     </p>
                                                                 </legend>
                                                             </h3>
@@ -524,7 +524,7 @@ function BuySplash() {
                                                             </div>
                                                         </fieldset>
                                                     </div>
-                                                </form> */}
+                                                </form> 
                         <div className="row d-flex justify-content-center mt-5">
                           <div className="col-md-6 col-11">
                             <div className="d-grid gap-2">
@@ -552,7 +552,7 @@ function BuySplash() {
             </div>
           </div>
 
-          {/* <div className='row d-flex justify-content-center mb-5'>
+           <div className='row d-flex justify-content-center mb-5'>
                         <div className='col-lg-11'>
                             <div className="card text-white" style={{ backgroundColor: "#30332f", color: "#dacc79", border: "2px solid #30332f" }}>
 
@@ -608,7 +608,7 @@ function BuySplash() {
                                                         type="button"
                                                         className="btn btn-outline-light fst-italic"
 
-                                                        onClick={() => WithdrawAVAX()}
+                                                        onClick={() => WithdrawFTM()}
                                                     >
                                                         {t("Withdraw.1")}
                                                     </button>
@@ -665,7 +665,7 @@ function BuySplash() {
 
                             </div>
                         </div>
-                    </div> */}
+                    </div>
         </div>
       </div>
       <div>

@@ -71,11 +71,11 @@ const Navbarapp = () => {
                   {t("THESHORE.1")}
                 </Nav.Link>
               </Link>
-              {/*      <Link to="/swap" style={{ textDecoration: "none" }}>
-                  <Nav.Link href="#swap" className=" " id="navbartext">
+              <Link to="/swap" style={{ textDecoration: "none" }}>
+                <Nav.Link href="#swap" className=" " id="navbartext">
                   {t("SWAP.1")}
-                  </Nav.Link> 
-              </Link>  */}
+                </Nav.Link>
+              </Link>
             </Nav>
             <Nav className="me-3">
               {/* <Link to="/whitepaper" style={{ textDecoration: "none" }}> */}
