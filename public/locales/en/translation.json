@@ -74,7 +74,7 @@
     "andteam.": {
         "1": "and team."
     },
-    "TheofficialtokenoftheSplashNetworkisSplash(SPLASH)ontheAvalancheChain(AVAX)thatcapturesvaluebybeingscarce,deflationary,censorshipresistant,andbybeingbuiltonarobust,trulydecentralizedblockchain.": {
+    "TheofficialtokenoftheSplashNetworkisSplash(SPLASH)ontheAvalancheChain(FTM)thatcapturesvaluebybeingscarce,deflationary,censorshipresistant,andbybeingbuiltonarobust,trulydecentralizedblockchain.": {
         "1": "The official token of the Ghost Network is Ghost (GHOST) on the Fantom Chain (FTM) that captures value by being scarce, deflationary, censorship resistant, and by being built on a robust, truly decentralized blockchain."
     },
     "TherecommendedexchangefortradingSplashistheTheWellcontractwhichcanbefounddirectlyontheplatformswebsiteundertheTheWelltab,asitallowsustowaivetheinitial10%taxonbuysandprovidesthelowestpricesandhighestliquidity,resultinginlessslippageforlargertrades.": {
@@ -92,7 +92,7 @@
     "STATS": {
         "1": "STATS"
     },
-    "TheSplashtokencapturestheentirevalueoftheSplashNetworkandmakesitavailabletotheentireAVAXCommunity": {
+    "TheSplashtokencapturestheentirevalueoftheSplashNetworkandmakesitavailabletotheentireFTMCommunity": {
         "1": "The Ghost token captures the entire value of the Ghost Network and makes it available to the entire FTM Community"
     },
     "Players": {
@@ -141,16 +141,16 @@
     "Price": {
         "1": "Price"
     },
-    "AVAX/Splash": {
+    "FTM/Splash": {
         "1": "FTM/Ghost"
     },
-    "AVAXBalance": {
+    "FTMBalance": {
         "1": "FTM Balance"
     },
     "USDT": {
         "1": "USDT"
     },
-    "AVAX": {
+    "FTM": {
         "1": "FTM"
     },
     "SplashBalance": {
@@ -538,13 +538,13 @@
     "WalletMustbewhitelist": {
         "1": "Wallet Must be whitelist"
     },
-    "PresalePrice0.00605AVAX": {
+    "PresalePrice0.00605FTM": {
         "1": "Presale Price 0.00605 FTM"
     },
-    "ListingPrice0.03025AVAX": {
+    "ListingPrice0.03025FTM": {
         "1": "Listing Price 0.03025 FTM"
     },
-    "Max5AVAXperWallet": {
+    "Max5FTMperWallet": {
         "1": "Max 5 FTM per Wallet"
     },
     "PresaleContractBalance": {
@@ -553,10 +553,10 @@
     "ContractBalance": {
         "1": "Contract Balance"
     },
-    "HARDCAP650AVAX": {
+    "HARDCAP650FTM": {
         "1": "HARD CAP 650 FTM"
     },
-    "SOFTCAP360AVAX": {
+    "SOFTCAP360FTM": {
         "1": "SOFT CAP 360 FTM"
     },
     "PreSale": {
@@ -565,7 +565,7 @@
     "EstimatereceivedSplash": {
         "1": "Estimate received Ghost"
     },
-    "BUYAVAX": {
+    "BUYFTM": {
         "1": "BUY FTM"
     },
     "ADMINPANEL": {
