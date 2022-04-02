@@ -1,22 +1,18 @@
-
 .provider-errors {
   position: absolute;
   top: 48px;
   color: #fff;
 }
 
-
-.popoverhere{
-    margin-left: -15.5rem;
-
+.popoverhere {
+  margin-left: -15.5rem;
 }
 
-.popoverhere2{
-    margin-left: -6rem;
-
+.popoverhere2 {
+  margin-left: -6rem;
 }
-.Ullist{
-    list-style: none;
+.Ullist {
+  list-style: none;
 }
 button {
   white-space: nowrap;
@@ -568,7 +564,7 @@ body {
   min-height: 0 !important;
 }
 
-.bg-primary {
+Splashg-primary {
   background-color: #4c4c4c !important;
 }
 
@@ -837,7 +833,7 @@ body {
   opacity: 0.7;
 }
 
-.landing-page .btn-outline-semi-light {
+.landing-page Splashtn-outline-semi-light {
   border: 1px solid hsla(0, 0%, 81.6%, 0.3);
   color: #d0d0d0;
   background: transparent;
@@ -2431,17 +2427,15 @@ pre code {
   }
 }
 
-@media (min-width:280px) and (max-width:480px) {
-    .popoverhere{
-        margin-left:auto;
-     justify-content: space-evenly;
-    }
+@media (min-width: 280px) and (max-width: 480px) {
+  .popoverhere {
+    margin-left: auto;
+    justify-content: space-evenly;
+  }
 
-    .popoverhere2{
-        margin-left: auto;
-
-    }
-
+  .popoverhere2 {
+    margin-left: auto;
+  }
 }
 
 .row {

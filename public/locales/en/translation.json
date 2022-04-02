@@ -1,50 +1,50 @@
 {
-    "SWAP":{
+    "SWAP": {
         "1": "SWAP"
     },
-    "THETAP":{
+    "THETAP": {
         "1": "THE TAP"
     },
-    "THESHORE":{
+    "THESHORE": {
         "1": "THE SHORE"
     },
-    "Whitepaper":{
+    "Whitepaper": {
         "1": "Whitepaper"
     },
-    "SplashDAO":{
-        "1": "Splash DAO"
+    "SplashDAO": {
+        "1": "Ghost DAO"
     },
-    "Tutorial":{
+    "Tutorial": {
         "1": "Tutorial"
     },
-    "English":{
+    "English": {
         "1": "English"
     },
-    "China":{
+    "China": {
         "1": "China"
     },
-    "Korea":{
+    "Korea": {
         "1": "Korea"
     },
-    "Spain":{
+    "Spain": {
         "1": "Spain"
     },
-    "Rusia":{
+    "Rusia": {
         "1": "Rusia"
     },
-    "France":{
+    "France": {
         "1": "France"
     },
-    "MetaMask":{
+    "MetaMask": {
         "1": "MetaMask"
     },
-    "ConnecttoyourMetaMaskWallet":{
+    "ConnecttoyourMetaMaskWallet": {
         "1": "Connect to your MetaMask Wallet"
     },
-    "WalletConnect":{
+    "WalletConnect": {
         "1": "WalletConnect"
     },
-    "ScanwithWalletConnecttoconnect":{
+    "ScanwithWalletConnecttoconnect": {
         "1": "Scan with WalletConnect to connect"
     },
 
@@ -53,89 +53,78 @@
 
 
 
-    "Approve":{
+    "Approve": {
         "1": "Approve"
     },
-    "SplashNETWORK":{
-        "1": "Splash NETWORK"
+    "SplashNETWORK": {
+        "1": "Ghost NETWORK"
     },
-    "SplashNetworkisthelatestprojectdevelopedby":{
-        "1": "Splash Network is the latest project developed by"
+    "SplashNetworkisthelatestprojectdevelopedby": {
+        "1": "Ghost Network is the latest project developed by"
     },
-    "SplassiveTeam":{
-        "1": "Splassive Team"
-    }
-    ,
-    "BB":{
+    "SplassiveTeam": {
+        "1": "Ghosts Team"
+    },
+    "BB": {
         "1": "BB"
-    }
-    ,
-    "SelectRandomAddressess":{
-        "1":"Select Random Addresses"
     },
-    "andteam.":{
+    "SelectRandomAddressess": {
+        "1": "Select Random Addresses"
+    },
+    "andteam.": {
         "1": "and team."
     },
-    "TheofficialtokenoftheSplashNetworkisSplash(SPLASH)ontheAvalancheChain(AVAX)thatcapturesvaluebybeingscarce,deflationary,censorshipresistant,andbybeingbuiltonarobust,trulydecentralizedblockchain.":{
-        "1": "The official token of the Splash Network is Splash (SPLASH) on the Avalanche Chain (AVAX) that captures value by being scarce, deflationary, censorship resistant, and by being built on a robust, truly decentralized blockchain."
+    "TheofficialtokenoftheSplashNetworkisSplash(SPLASH)ontheAvalancheChain(AVAX)thatcapturesvaluebybeingscarce,deflationary,censorshipresistant,andbybeingbuiltonarobust,trulydecentralizedblockchain.": {
+        "1": "The official token of the Ghost Network is Ghost (GHOST) on the Fantom Chain (FTM) that captures value by being scarce, deflationary, censorship resistant, and by being built on a robust, truly decentralized blockchain."
     },
-    "TherecommendedexchangefortradingSplashistheTheWellcontractwhichcanbefounddirectlyontheplatformswebsiteundertheTheWelltab,asitallowsustowaivetheinitial10%taxonbuysandprovidesthelowestpricesandhighestliquidity,resultinginlessslippageforlargertrades.":{
-        "1": "The recommended exchange for trading Splash is The Well contract which can be found directly on the platform's website under. The Well tab provides the lowest prices and highest liquidity, resulting in less slippage for larger trades."
+    "TherecommendedexchangefortradingSplashistheTheWellcontractwhichcanbefounddirectlyontheplatformswebsiteundertheTheWelltab,asitallowsustowaivetheinitial10%taxonbuysandprovidesthelowestpricesandhighestliquidity,resultinginlessslippageforlargertrades.": {
+        "1": "The recommended exchange for trading Ghost is The Well contract which can be found directly on the platform's website under. The Well tab provides the lowest prices and highest liquidity, resulting in less slippage for larger trades."
     },
-    "TRADE":{
+    "TRADE": {
         "1": "TRADE"
     },
-    "STAKE":{
+    "STAKE": {
         "1": "STAKE"
     },
-    "LIQUIDITYFARM":{
+    "LIQUIDITYFARM": {
         "1": "LIQUIDITY FARM"
     },
-    "STATS":{
+    "STATS": {
         "1": "STATS"
     },
-    "TheSplashtokencapturestheentirevalueoftheSplashNetworkandmakesitavailabletotheentireAVAXCommunity":{
-        "1": "The Splash token captures the entire value of the Splash Network and makes it available to the entire AVAX Community"
+    "TheSplashtokencapturestheentirevalueoftheSplashNetworkandmakesitavailabletotheentireAVAXCommunity": {
+        "1": "The Ghost token captures the entire value of the Ghost Network and makes it available to the entire FTM Community"
     },
-    "Players":{
+    "Players": {
         "1": "Players"
     },
-    "count":{
+    "count": {
         "1": "count"
-    }
-    ,
-    "Maxdailyreturn":{
+    },
+    "Maxdailyreturn": {
         "1": "Max daily return"
-    }
-    ,
-    "Totalsupply":{
+    },
+    "Totalsupply": {
         "1": "Total supply"
-    }
-    ,
-    "Splash":{
-        "1": "Splash"
-    }
-    ,
-    "Transactions":{
+    },
+    "Splash": {
+        "1": "Ghost"
+    },
+    "Transactions": {
         "1": "Transactions"
-    }
-    ,
-    "Activity":{
+    },
+    "Activity": {
         "1": "Activity"
-    }
-    ,
-    "From":{
+    },
+    "From": {
         "1": "From"
-    }
-    ,
-    "To":{
+    },
+    "To": {
         "1": "To"
-    }
-    ,
-    "Amount":{
+    },
+    "Amount": {
         "1": "Amount"
-    }
-    ,
+    },
 
 
 
@@ -146,110 +135,92 @@
 
 
 
-    "TheWell":{
+    "TheWell": {
         "1": "THE WELL"
-    }
-    ,
-    "Price":{
+    },
+    "Price": {
         "1": "Price"
-    }
-    ,
-    "AVAX/Splash":{
-        "1": "AVAX/Splash"
-    }
-    ,
-    "AVAXBalance":{
-        "1": "AVAX Balance"
-    }
-    ,
-    "USDT":{
+    },
+    "AVAX/Splash": {
+        "1": "FTM/Ghost"
+    },
+    "AVAXBalance": {
+        "1": "FTM Balance"
+    },
+    "USDT": {
         "1": "USDT"
     },
-    "AVAX":{
-        "1": "AVAX"
-    }
-    ,
-    "SplashBalance":{
-        "1": "Splash Balance"
-    }
-
-    ,
-    "BuySplash":{
-        "1": "Buy Splash"
+    "AVAX": {
+        "1": "FTM"
+    },
+    "SplashBalance": {
+        "1": "Ghost Balance"
     }
 
     ,
-    "Slippagetolerance":{
+    "BuySplash": {
+        "1": "Buy Ghost"
+    }
+
+    ,
+    "Slippagetolerance": {
         "1": "Slippage tolerance"
-    }
-    ,
-    "Estimatereceived":{
+    },
+    "Estimatereceived": {
         "1": "Estimate received"
-    }
-    ,
-    "Minimumreceived":{
+    },
+    "Minimumreceived": {
         "1": "Minimum received"
-    }
-    ,
-    "Buy":{
+    },
+    "Buy": {
         "1": "Buy"
-    }
-    ,
-    "SELLSplash":{
-        "1": "SELL Splash"
+    },
+    "SELLSplash": {
+        "1": "SELL Ghost"
     }
 
     ,
-    "Max":{
+    "Max": {
         "1": "Max"
-    }
-    ,
-    "10%Taxisappliedonsells":{
+    },
+    "10%Taxisappliedonsells": {
         "1": "10% Tax is applied on sells"
-    }
-    ,
-    "Sell":{
+    },
+    "Sell": {
         "1": "Sell"
-    }
-    ,
-    "ApproveSplash":{
-        "1": "Approve Splash"
-    }
-    ,
-    "Chart":{
+    },
+    "ApproveSplash": {
+        "1": "Approve Ghost"
+    },
+    "Chart": {
         "1": "Chart"
-    }
-    ,
-    "Stats":{
+    },
+    "Stats": {
         "1": "STATS"
-    }
-    ,
-    "TheWellisthebestwaytoexchangevalueintheSplashNetwork!Herearethenumbers":{
-        "1": "The Well is the best way to exchange value in the Splash Network! Here are the numbers"
+    },
+    "TheWellisthebestwaytoexchangevalueintheSplashNetwork!Herearethenumbers": {
+        "1": "The Well is the best way to exchange value in the Ghost Network! Here are the numbers"
     }
 
     ,
-    "Supply":{
+    "Supply": {
         "1": "Supply"
-    }
-    ,
-    "ContractBalance":{
+    },
+    "ContractBalance": {
         "1": "Contract Balance"
-    }
-    ,
-    "DROPS":{
-        "1": "DROPS"
-    }
-    ,
-    "LOCKED":{
+    },
+    "DROPS": {
+        "1": "FEAR"
+    },
+    "LOCKED": {
         "1": "LOCKED"
     },
-    "Tranactions":{
+    "Tranactions": {
         "1": "Tranactions"
     }
 
     ,
-    "Txs":{
+    "Txs": {
         "1": "Txs"
     }
 
@@ -260,368 +231,295 @@
 
 
 
-    "Available":{
+    "Available": {
         "1": "Available"
-    }
-    ,
-    "Deposit":{
+    },
+    "Deposit": {
         "1": "Deposit"
-    }
-    ,
-    "Claimed":{
+    },
+    "Claimed": {
         "1": "Claimed"
-    }
-    ,
-    "Rewarded":{
+    },
+    "Rewarded": {
         "1": "Rewarded"
-    }
-    ,
-    "Direct":{
+    },
+    "Direct": {
         "1": "Direct"
-    }
-    ,
-    "Indirect":{
+    },
+    "Indirect": {
         "1": "Indirect"
-    }
-    ,
-    "MaxPayout":{
+    },
+    "MaxPayout": {
         "1": "Max Payout"
-    }
-    ,
-    "Team":{
+    },
+    "Team": {
         "1": "Team"
-    }
-    ,
-    "Total":{
+    },
+    "Total": {
         "1": "Total"
-    }
-    ,
-    "Splassive’sTheTapisalowrisk,highrewardcontractthatoperatessimilarlytoahighyieldcertificateofdepositbypayingout2%dailyreturnoninvestmentupto360%.":{
-        "1": "Splassive’s The Tap is a low-risk, high reward contract that operates similarly to a high yield certificate of deposit by paying out 2% daily return on investment up to 360%."
-    }
-    ,
-    "Playerscancompoundandextendtheirearningsthroughdeposits,hydrating(compounding)rewardsaswellasthroughteambasedreferrals.":{
+    },
+    "Splassive’sTheTapisalowrisk,highrewardcontractthatoperatessimilarlytoahighyieldcertificateofdepositbypayingout2%dailyreturnoninvestmentupto360%.": {
+        "1": "Ghost's The Tap is a low-risk, high reward contract that operates similarly to a high yield certificate of deposit by paying out 2% daily return on investment up to 360%."
+    },
+    "Playerscancompoundandextendtheirearningsthroughdeposits,hydrating(compounding)rewardsaswellasthroughteambasedreferrals.": {
         "1": "Players can compound and extend their earnings through deposits, hydrating (compounding) rewards as well as through team based referrals."
-    }
-    ,
-    "CopyReferralLink":{
+    },
+    "CopyReferralLink": {
         "1": "Copy Referral Link"
     },
-    "GetSplash":{
-        "1": "Get Splash"
-    }
-    ,
-    "Aminimumof1Splashrequiredfordeposits":{
-        "1": "A minimum of 1 Splash required for deposits"
-    }
-    ,
-    "A10%taxischargedondeposits":{
+    "GetSplash": {
+        "1": "Get Ghost"
+    },
+    "Aminimumof1Splashrequiredfordeposits": {
+        "1": "A minimum of 1 Ghost required for deposits"
+    },
+    "A10%taxischargedondeposits": {
         "1": "A 10% tax is charged on deposits"
-    }
-    ,
-    "HYDRATE":{
+    },
+    "HYDRATE": {
         "1": "HYDRATE"
-    }
-    ,
-    "recompound":{
+    },
+    "recompound": {
         "1": "recompound"
-    }
-    ,
-    "Claim":{
+    },
+    "Claim": {
         "1": "Claim"
-    }
-    ,
-    "JoinTheWave":{
+    },
+    "JoinTheWave": {
         "1": "Join The Wave"
-    }
-    ,
-    "CurrentWaveStarter":{
+    },
+    "CurrentWaveStarter": {
         "1": "Current Wave Starter"
-    }
-    ,
-    "None":{
+    },
+    "None": {
         "1": "None"
-    }
-    ,
-    "Manager":{
+    },
+    "Manager": {
         "1": "Manager"
-    }
-    ,
-    "Beneficiary":{
+    },
+    "Beneficiary": {
         "1": "Beneficiary"
-    }
-    ,
-    "LastCheckin":{
+    },
+    "LastCheckin": {
         "1": "Last Checkin"
-    }
-    ,
-    "InactivityThreshold":{
+    },
+    "InactivityThreshold": {
         "1": "Inactivity Threshold"
-    }
-    ,
-    "WaveStarter":{
+    },
+    "WaveStarter": {
         "1": "Wave Starter"
-    }
-    ,
-    "Update":{
+    },
+    "Update": {
         "1": "Update"
     }
 
     ,
-    "SupportMarketingandDevelopment":{
+    "SupportMarketingandDevelopment": {
         "1": "Support Marketing and Development"
-    }
-    ,
-    "CheckoutWhoSplashed":{
-        "1": "Checkout Who Splashed"
-    }
-    ,
-    "PlayerLookup":{
+    },
+    "CheckoutWhoSplashed": {
+        "1": "Checkout Who Ghosted"
+    },
+    "PlayerLookup": {
         "1": "Player Lookup"
-    }
-    ,
-    "GO":{
+    },
+    "GO": {
         "1": "GO"
-    }
-    ,
-    "PlayerInfo":{
+    },
+    "PlayerInfo": {
         "1": "Player Info"
-    }
-    ,
-    "Directs":{
+    },
+    "Directs": {
         "1": "Directs"
-    }
-    ,
-    "NetDeposits":{
+    },
+    "NetDeposits": {
         "1": "Net Deposits"
-    }
-    ,
-    "AirdropSent":{
+    },
+    "AirdropSent": {
         "1": "Airdrop Sent"
-    }
-    ,
-    "Received":{
+    },
+    "Received": {
         "1": "Received"
     }
 
     ,
-    "AirdropLastSent":{
+    "AirdropLastSent": {
         "1": "Airdrop Last Sent"
-    }
-    ,
-    "Never":{
+    },
+    "Never": {
         "1": "Never"
-    }
-    ,
-    "TeamViewer":{
+    },
+    "TeamViewer": {
         "1": "Team Viewer"
-    }
-    ,
-    "TeamAirdrop":{
+    },
+    "TeamAirdrop": {
         "1": "Team Airdrop"
-    }
-    ,
-    "DirectAirdrop":{
+    },
+    "DirectAirdrop": {
         "1": "Direct Airdrop"
-    }
-    ,
-    "Player":{
+    },
+    "Player": {
         "1": "Player"
-    }
-    ,
-    "Usemyaddress":{
+    },
+    "Usemyaddress": {
         "1": "Use my address"
-    }
-    ,
-    "Viewall":{
+    },
+    "Viewall": {
         "1": "View all"
-    }
-    ,
-    "Show":{
+    },
+    "Show": {
         "1": "Show"
-    }
-    ,
-    "Campaign":{
+    },
+    "Campaign": {
         "1": "Campaign"
-    }
-    ,
-    "Dividebudgetbetweenmatchingplayers":{
+    },
+    "Dividebudgetbetweenmatchingplayers": {
         "1": "Divide budget between matching players"
     }
 
     ,
-    "Rewardsbudgettoonematchingplayer":{
+    "Rewardsbudgettoonematchingplayer": {
         "1": "Rewards budget to one matching player"
-    }
-    ,
-    "Dividedbudgetacross5matchingplayers":{
+    },
+    "Dividedbudgetacross5matchingplayers": {
         "1": "Divided budget across 5 matching players"
-    }
-    ,
-    "Dividedbudgetacross20matchingplayers":{
+    },
+    "Dividedbudgetacross20matchingplayers": {
         "1": "Divided budget across 20 matching players"
-    }
-    ,
-    "Dividedbudgetacross50matchingplayers":{
+    },
+    "Dividedbudgetacross50matchingplayers": {
         "1": "Divided budget across 50 matching players"
-    }
-    ,
-    "Dividedbudgetacross100matchingplayers":{
+    },
+    "Dividedbudgetacross100matchingplayers": {
         "1": "Divided budget across 100 matching players"
     },
-    "Eligiblematchingplayersselectedatrandom":{
+    "Eligiblematchingplayersselectedatrandom": {
         "1": "Eligible matching players selected at random"
     },
-    "Minimumdirects":{
+    "Minimumdirects": {
         "1": "Minimum directs"
     },
-    "Teamdepth":{
+    "Teamdepth": {
         "1": "Team depth"
-    }
-    ,
-    "Minimumnetdeposits":{
+    },
+    "Minimumnetdeposits": {
         "1": "Minimum net deposits"
-    }
-    ,
-    "Budget":{
+    },
+    "Budget": {
         "1": "Budget"
-    }
-    ,
-    "RUN":{
+    },
+    "RUN": {
         "1": "RUN"
-    }
-    ,
-    "Numberofrecipients":{
+    },
+    "Numberofrecipients": {
         "1": "Number of recipients"
-    }
-    ,
-    "EstimatedSplashperperson":{
-        "1": "Estimated Splash per person"
-    }
-    ,
-    "SEND":{
+    },
+    "EstimatedSplashperperson": {
+        "1": "Estimated Ghost per person"
+    },
+    "SEND": {
         "1": "SEND"
-    }
-    ,
-    "CampaignConsole":{
+    },
+    "CampaignConsole": {
         "1": "Campaign Console"
-    }
-    ,
-    "CampaignViewer":{
+    },
+    "CampaignViewer": {
         "1": "Campaign Viewer"
-    }
-    ,
-    "Address":{
+    },
+    "Address": {
         "1": "Address"
-    }
-    ,
-    "Deposits":{
+    },
+    "Deposits": {
         "1": "Deposits"
     },
-    "Status":{
+    "Status": {
         "1": "Status"
     },
-    "About":{
+    "About": {
         "1": "About"
-    }
-    ,
-    "PlayerscanparticipatebypurchasingSplashfromtheplatform'sTheWellpage,joininganotheruser’sSplashteam(1Splashminimumrequirement)DepositingSplashtotheTheTapcontractearnsaconsistent2%dailyreturnoftheirSplash(365%maximumpayout)passively.Playerscanalsocompoundtheirearningsthroughregulardeposits,rollingrewardsaswellasteambasedreferrals.Unlikemanyotherplatformspromisingaconsistentdaily%return,TheTap'scontractcannotdrainandwillALWAYSbeabletoprovidetheSplashthathasbeenrewarded.Splashrewardscomefroma10%taxonallSplashtransactionsexcludingbuysfromtheplatform'sTheWellpage.":{
-        "1": "Players can participate by purchasing Splash from the platform's The WELL page, joining another user’s Splash team (1 Splash minimum requirement) Depositing Splash to the The Tap contract earns a consistent 2% daily return of their Splash (360% maximum payout) passively. Players can also compound their earnings through regular deposits, rolling rewards as well as team based referrals. Unlike many other platforms promising a consistent daily % return, The Tap's contract cannot drain and will ALWAYS be able to provide the Splash that has been rewarded. Splash rewards come from a 10% tax on all Splash transactions on buys and sells from The WELL page."
-    }
-    ,
-    "IfthereiseverasituationwherethetaxpoolisnotenoughtopaySplashrewardsnewSplashwillbemintedtoensurerewardsarepaidout.GiventhegametheorybehindtheSplashnetwork,theprobabilitythatthesystemwillneedtomintnewSplashtopayrewardsisextremelylow.SinceSplashdepositedintoTheTaparesenttoaburnaddressandSplashisconstantlybeinglockedintheliquiditypoolthroughtheTheShorecontract,SplashistheonlydeflationarydailyROIplatform.ThebeststrategyforSplashistofocusonrealworldadoptionbybuildingoutyourteamthroughdirectreferrals,asyouwillreceivebonusrewardsfromreferralsontheirdepositsanddownlinebonusesfromplayerstheyreferbasedontheamountofWAVETokenheldinyourwallet":{
-        "1": "If there is ever a situation where the tax pool is not enough to pay Splash rewards new Splash will be minted to ensure rewards are paid out. Given the game theory behind the Splash network, the probability that the system will need to mint new Splash to pay rewards is extremely low. Since Splash deposited into The Tap are sent to a burn address and Splash is constantly being locked in the liquidity pool through the The Shore contract, Splash is the only deflationary daily ROI platform. The best strategy for Splash is to focus on real world adoption by building out your team through direct referrals, as you will receive bonus rewards from referrals on their deposits and downline bonuses from players they refer based on the amount of WAVE Token held in your wallet"
-    }
-    ,
+    },
+    "PlayerscanparticipatebypurchasingSplashfromtheplatform'sTheWellpage,joininganotheruser’sSplashteam(1Splashminimumrequirement)DepositingSplashtotheTheTapcontractearnsaconsistent2%dailyreturnoftheirSplash(365%maximumpayout)passively.Playerscanalsocompoundtheirearningsthroughregulardeposits,rollingrewardsaswellasteambasedreferrals.Unlikemanyotherplatformspromisingaconsistentdaily%return,TheTap'scontractcannotdrainandwillALWAYSbeabletoprovidetheSplashthathasbeenrewarded.Splashrewardscomefroma10%taxonallSplashtransactionsexcludingbuysfromtheplatform'sTheWellpage.": {
+        "1": "Players can participate by purchasing Ghost from the platform's The WELL page, joining another user’s Ghost team (1 Ghost minimum requirement) Depositing Ghost to the The Tap contract earns a consistent 2% daily return of their Ghost (360% maximum payout) passively. Players can also compound their earnings through regular deposits, rolling rewards as well as team based referrals. Unlike many other platforms promising a consistent daily % return, The Tap's contract cannot drain and will ALWAYS be able to provide the Ghost that has been rewarded. Ghost rewards come from a 10% tax on all Ghost transactions on buys and sells from The WELL page."
+    },
+    "IfthereiseverasituationwherethetaxpoolisnotenoughtopaySplashrewardsnewSplashwillbemintedtoensurerewardsarepaidout.GiventhegametheorybehindtheSplashnetwork,theprobabilitythatthesystemwillneedtomintnewSplashtopayrewardsisextremelylow.SinceSplashdepositedintoTheTaparesenttoaburnaddressandSplashisconstantlybeinglockedintheliquiditypoolthroughtheTheShorecontract,SplashistheonlydeflationarydailyROIplatform.ThebeststrategyforSplashistofocusonrealworldadoptionbybuildingoutyourteamthroughdirectreferrals,asyouwillreceivebonusrewardsfromreferralsontheirdepositsanddownlinebonusesfromplayerstheyreferbasedontheamountofWAVETokenheldinyourwallet": {
+        "1": "If there is ever a situation where the tax pool is not enough to pay Ghost rewards new Ghost will be minted to ensure rewards are paid out. Given the game theory behind the Ghost network, the probability that the system will need to mint new Ghost to pay rewards is extremely low. Since Ghost deposited into The Tap are sent to a burn address and Ghost is constantly being locked in the liquidity pool through the The Shore contract, Ghost is the only deflationary daily ROI platform. The best strategy for Ghost is to focus on real world adoption by building out your team through direct referrals, as you will receive bonus rewards from referrals on their deposits and downline bonuses from players they refer based on the amount of WAVE Token held in your wallet"
+    },
 
 
 
 
-    "Rewards":{
+    "Rewards": {
         "1": "Rewards"
-    }
-    ,
-    "TotalDROPS":{
-        "1": "Total DROPS"
-    }
-    ,
-    "DROP":{
+    },
+    "TotalDROPS": {
+        "1": "Total FEAR"
+    },
+    "DROP": {
         "1": "DROP"
-    }
-    ,
-    "Stake":{
+    },
+    "Stake": {
         "1": "Stake"
     }
 
     ,
-    "Compounds":{
+    "Compounds": {
         "1": "Compounds"
-    }
-    ,
-    "Count":{
+    },
+    "Count": {
         "1": "Count"
-    }
-    ,
-    "TotalWithdrawn":{
+    },
+    "TotalWithdrawn": {
         "1": "Total Withdrawn"
-    }
-    ,
-    "CompoundedTotal":{
+    },
+    "CompoundedTotal": {
         "1": "Compounded Total"
     }
 
     ,
-    "TheShoreisTheSplashNetwork’ssolutionforplayersthatwantbenefitfromnon-inflationaryyieldfarmingthroughaddingliquiditytoSplash":{
-        "1": "The Shore is The Splash Network’s solution for players that want benefit from non-inflationary yield farming through adding liquidity to Splash"
-    }
-    ,
-    "COMPOUND":{
+    "TheShoreisTheSplashNetwork’ssolutionforplayersthatwantbenefitfromnon-inflationaryyieldfarmingthroughaddingliquiditytoSplash": {
+        "1": "The Shore is The Ghost Network’s solution for players that want benefit from non-inflationary yield farming through adding liquidity to Ghost"
+    },
+    "COMPOUND": {
         "1": "COMPOUND"
-    }
-    ,
-    "CLAIM":{
+    },
+    "CLAIM": {
         "1": "CLAIM"
-    }
-    ,
-    "BuyandDeposit":{
+    },
+    "BuyandDeposit": {
         "1": "Buy and Deposit"
     }
 
     ,
-    "Estimated":{
+    "Estimated": {
         "1": "Estimated"
     },
-    "BUY":{
+    "BUY": {
         "1": "BUY"
     }
 
     ,
-    "Withdraw":{
+    "Withdraw": {
         "1": "Withdraw"
     },
-    "DropBalance":{
+    "DropBalance": {
         "1": "Drop Balance"
     },
-    "TheShoreisTheSplashNetwork’ssolutionforplayersthatwantbenefitfromnoninflationaryyieldfarmingthroughaddingliquiditytoSplash.Herearethenumbers":{
-        "1": "The Shore is The Splash Network’s solution for players that want benefit from non-inflationary yield farming through adding liquidity to Splash. Here are the numbers"
-    }
-    ,
-    "UserCount":{
+    "TheShoreisTheSplashNetwork’ssolutionforplayersthatwantbenefitfromnoninflationaryyieldfarmingthroughaddingliquiditytoSplash.Herearethenumbers": {
+        "1": "The Shore is The Ghost Network’s solution for players that want benefit from non-inflationary yield farming through adding liquidity to Ghost. Here are the numbers"
+    },
+    "UserCount": {
         "1": "User Count"
-    }
-    ,
-    "TotalValueLocked":{
+    },
+    "TotalValueLocked": {
         "1": "Total Value Locked"
-    }
-    ,
-    "DividendPool":{
+    },
+    "DividendPool": {
         "1": "Dividend Pool"
-    }
-    ,
-    "JoinusonTelegram":{
+    },
+    "JoinusonTelegram": {
         "1": "Join us on Telegram"
     },
-    "JoinusTwiter":{
+    "JoinusTwiter": {
         "1": "Join us Twiter"
     },
 
@@ -631,67 +529,52 @@
 
 
 
-    "BuySplash":{
-        "1": "Buy Splash"
-    }
-    ,
-    "SplassivePresaleDetails":{
-        "1": "Splassive Presale Details"
-    }
-    ,
-    "WalletMustbewhitelist":{
+    "BuySplash": {
+        "1": "Buy Ghost"
+    },
+    "SplassivePresaleDetails": {
+        "1": "Ghosts Presale Details"
+    },
+    "WalletMustbewhitelist": {
         "1": "Wallet Must be whitelist"
-    }
-    ,
-    "PresalePrice0.00605AVAX":{
-        "1": "Presale Price 0.00605 AVAX"
-    }
-    ,
-    "ListingPrice0.03025AVAX":{
-        "1": "Listing Price 0.03025 AVAX"
-    }
-    ,
-    "Max5AVAXperWallet":{
-        "1": "Max 5 AVAX per Wallet"
-    }
-    ,
-    "PresaleContractBalance":{
+    },
+    "PresalePrice0.00605AVAX": {
+        "1": "Presale Price 0.00605 FTM"
+    },
+    "ListingPrice0.03025AVAX": {
+        "1": "Listing Price 0.03025 FTM"
+    },
+    "Max5AVAXperWallet": {
+        "1": "Max 5 FTM per Wallet"
+    },
+    "PresaleContractBalance": {
         "1": "Presale Contract Balance"
-    }
-    ,
-    "ContractBalance":{
+    },
+    "ContractBalance": {
         "1": "Contract Balance"
-    }
-    ,
-    "HARDCAP650AVAX":{
-        "1": "HARD CAP 650 AVAX"
-    }
-    ,
-    "SOFTCAP360AVAX":{
-        "1": "SOFT CAP 360 AVAX"
-    }
-    ,
-    "PreSale":{
+    },
+    "HARDCAP650AVAX": {
+        "1": "HARD CAP 650 FTM"
+    },
+    "SOFTCAP360AVAX": {
+        "1": "SOFT CAP 360 FTM"
+    },
+    "PreSale": {
         "1": "PreSale"
-    }
-    ,
-    "EstimatereceivedSplash":{
-        "1": "Estimate received Splash"
-    }
-    ,
-    "BUYAVAX":{
-        "1": "BUY AVAX"
-    }
-    ,
-    "ADMINPANEL":{
+    },
+    "EstimatereceivedSplash": {
+        "1": "Estimate received Ghost"
+    },
+    "BUYAVAX": {
+        "1": "BUY FTM"
+    },
+    "ADMINPANEL": {
         "1": "ADMIN PANEL"
-    }
-    ,
-    "AddAddressToWhiteList":{
+    },
+    "AddAddressToWhiteList": {
         "1": "Add Address To WhiteList"
-    }
-    ,
-    "RemoveAddressFromWhitelist":{
+    },
+    "RemoveAddressFromWhitelist": {
         "1": "Remove Address From Whitelist"
     }
 

@@ -1,45 +1,46 @@
 // Set of helper functions to facilitate wallet setup
 
-import { nodes } from './getRpcUrl'
+import { nodes } from "./getRpcUrl";
 
 /**
  * Prompt the user to add BSC as a network on Metamask, or switch to BSC if the wallet is on a different network
  * @returns {boolean} true if the setup succeeded, false otherwise
  */
 export const setupNetwork = async () => {
-  const provider = (window).ethereum
+  const provider = window.ethereum;
   if (provider) {
     // const chainId = parseInt(process.env.REACT_APP_CHAIN_ID, 10)
-    const chainId = 56
+    const chainId = 4002;
     try {
       await provider.request({
-        method: 'wallet_addEthereumChain',
+        method: "wallet_addEthereumChain",
         params: [
           {
             chainId: `0x${chainId.toString(16)}`,
-            chainName: 'Binance Smart Chain TestNet',
+            chainName: "Fantom Chain TestNet",
             nativeCurrency: {
-              name: 'BNB',
-              symbol: 'bnb',
+              name: "FTM",
+              symbol: "ftm",
               decimals: 18,
             },
             rpcUrls: nodes,
-            blockExplorerUrls: ['https://bscscan.com/'],
+            blockExplorerUrls: ["https://testnet.ftmscan.com/"],
             // blockExplorerUrls: ['https://testnet.bscscan.com/'],
-
           },
         ],
-      })
-      return true
+      });
+      return true;
     } catch (error) {
-      console.error(error)
-      return false
+      console.error(error);
+      return false;
     }
   } else {
-    console.error("Can't setup the BSC network on metamask because window.ethereum is undefined")
-    return false
+    console.error(
+      "Can't setup the FTM network on metamask because window.ethereum is undefined"
+    );
+    return false;
   }
-}
+};
 
 /**
  * Prompt the user to add a custom token to metamask
@@ -53,12 +54,12 @@ export const registerToken = async (
   tokenAddress,
   tokenSymbol,
   tokenDecimals,
-  tokenImage,
+  tokenImage
 ) => {
-  const tokenAdded = await (window).ethereum.request({
-    method: 'wallet_watchAsset',
+  const tokenAdded = await window.ethereum.request({
+    method: "wallet_watchAsset",
     params: {
-      type: 'ERC20',
+      type: "ERC20",
       options: {
         address: tokenAddress,
         symbol: tokenSymbol,
@@ -66,7 +67,7 @@ export const registerToken = async (
         image: tokenImage,
       },
     },
-  })
+  });
 
-  return tokenAdded
-}
+  return tokenAdded;
+};
