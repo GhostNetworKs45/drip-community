@@ -3,7 +3,7 @@ import coin from "../../images/coin.png";
 import balance from "../../images/iconWhite (1).png";
 import Web3 from "web3";
 import drops from "../../images/coinwhite.png";
-import avax from '../../images/avax.png'
+import avax from "../../images/avax.png";
 import { ToastContainer, toast } from "react-toastify";
 import van from "../../images/van.png";
 import contact from "../../images/contact (2).png";
@@ -15,7 +15,7 @@ import Button from "react-bootstrap/Button";
 import Chart from "./Chart";
 import axios from "axios";
 import price from "crypto-price";
-import Unit from "cryptocurrency-unit-convert"
+import Unit from "cryptocurrency-unit-convert";
 import { loadWeb3 } from "../api";
 import { faucetTokenAddress, faucetTokenAbi } from "../utils/Faucet";
 import {
@@ -25,8 +25,8 @@ import {
 // import { useState } from "react";
 import "./Swap.css";
 import bigInt from "big-integer";
-const webSupply = new Web3("https://api.avax.network/ext/bc/C/rpc");
-const Swap = ({setOneTokenPrice}) => {
+const webSupply = new Web3("https://rpc.testnet.fantom.network/");
+const Swap = ({ setOneTokenPrice }) => {
   let [boxOne, setBoxOne] = useState(false);
   let [tripType, setTripType] = useState(1);
   let [tripType1, setTripType1] = useState(1);
@@ -92,7 +92,9 @@ const Swap = ({setOneTokenPrice}) => {
   const getDataWitoutMetamask = async () => {
     try {
       // let usdValue = await price.getBasePrice("AVAX", "USDT");
-      let usdValue = await axios.get("https://api.binance.com/api/v3/ticker/price?symbol=AVAXUSDT")
+      let usdValue = await axios.get(
+        "https://api.binance.com/api/v3/ticker/price?symbol=FTMUSDT"
+      );
       let currentBnB = usdValue.data.price;
       let contractOf = new webSupply.eth.Contract(
         fountainContractAbi,
@@ -148,452 +150,458 @@ const Swap = ({setOneTokenPrice}) => {
       setCdripBalance(contractFdripBalance);
       setDivision(BdividedByD);
       setOnedripPrice(priceOfoneDrip);
-      setOneTokenPrice(priceOfoneDrip)
+      setOneTokenPrice(priceOfoneDrip);
       setTsupplyDrip(supplyDrip);
       setTsupplyFountain(fonutainDrip);
       setTtransactionFountain(transactionFountain);
     } catch (e) {
-      console.log("error while get data without metamask",e);
+      console.log("error while get data without metamask", e);
     }
   };
   const addMaxBalance = async () => {
-    try{
-    let acc = await loadWeb3();
+    try {
+      let acc = await loadWeb3();
 
-    if (acc == "No Wallet") {
-      toast.error("No Wallet Connected")
-    } else {
-      const web3 = window.web3;
-      let tokenContractOf = await new web3.eth.Contract(
-        faucetTokenAbi,
-        faucetTokenAddress
-      );
-      let dripBalance = await tokenContractOf.methods.balanceOf(acc).call();
-      dripBalance = webSupply.utils.fromWei(dripBalance);
-      inputE2.current.value = dripBalance;
-      dripBalance = parseFloat(dripBalance).toFixed(7);
-      setuserDripBalance(dripBalance);
-      await enterBuyAmount2();
+      if (acc == "No Wallet") {
+        toast.error("No Wallet Connected");
+      } else {
+        const web3 = window.web3;
+        let tokenContractOf = await new web3.eth.Contract(
+          faucetTokenAbi,
+          faucetTokenAddress
+        );
+        let dripBalance = await tokenContractOf.methods.balanceOf(acc).call();
+        dripBalance = webSupply.utils.fromWei(dripBalance);
+        inputE2.current.value = dripBalance;
+        dripBalance = parseFloat(dripBalance).toFixed(7);
+        setuserDripBalance(dripBalance);
+        await enterBuyAmount2();
+      }
+    } catch (e) {
+      console.log("error while get max balance", e);
     }
-  }catch(e){
-    console.log("error while get max balance",e);
-  }
   };
   const enterBuyAmount1 = async () => {
-    try{
-    let myvalue = inputEl.current.value;
-    let contractOf = new webSupply.eth.Contract(
-      fountainContractAbi,
-      fountainContractAddress
-    );
-    if (myvalue > 0) {
-      myvalue = webSupply.utils.toWei(myvalue);
-      setEnteredval(myvalue);
+    try {
+      let myvalue = inputEl.current.value;
+      let contractOf = new webSupply.eth.Contract(
+        fountainContractAbi,
+        fountainContractAddress
+      );
+      if (myvalue > 0) {
+        myvalue = webSupply.utils.toWei(myvalue);
+        setEnteredval(myvalue);
 
-      
+        let tokensInputPrice = await contractOf.methods
+          .getBnbToTokenInputPrice(myvalue)
+          .call();
 
-      let tokensInputPrice = await contractOf.methods
-        .getBnbToTokenInputPrice(myvalue)
-        .call();
-     
-      tokensInputPrice = webSupply.utils.fromWei(tokensInputPrice);
-      tokensInputPrice = parseFloat(tokensInputPrice).toFixed(7);
+        tokensInputPrice = webSupply.utils.fromWei(tokensInputPrice);
+        tokensInputPrice = parseFloat(tokensInputPrice).toFixed(7);
 
-      let miniumrcvd = (tripType * tokensInputPrice) / 100;
-      let percentValue = tokensInputPrice - miniumrcvd;
-      percentValue = parseFloat(percentValue).toFixed(7);
+        let miniumrcvd = (tripType * tokensInputPrice) / 100;
+        let percentValue = tokensInputPrice - miniumrcvd;
+        percentValue = parseFloat(percentValue).toFixed(7);
 
-      setEstimate(tokensInputPrice);
-      setMinrecieved(percentValue);
-    } else {
-      setEstimate();
-      setMinrecieved();
+        setEstimate(tokensInputPrice);
+        setMinrecieved(percentValue);
+      } else {
+        setEstimate();
+        setMinrecieved();
+      }
+    } catch (e) {
+      console.log("error while getting data against entered amount", e);
     }
-  }catch(e){
-    console.log("error while getting data against entered amount",e);
-  }
   };
   const enterRadioAmount1 = async () => {
-    try{
+    try {
+      let myMultiplyValue = 1;
+      let myvalue = inputEl.current.value;
 
-    let myMultiplyValue = 1;
-    let myvalue = inputEl.current.value;
+      const web3 = window.web3;
+      let contractOf = new web3.eth.Contract(
+        fountainContractAbi,
+        fountainContractAddress
+      );
 
-    const web3 = window.web3;
-    let contractOf = new web3.eth.Contract(
-      fountainContractAbi,
-      fountainContractAddress
-    );
+      if (myvalue > 0) {
+        myvalue = web3.utils.toWei(myvalue);
+        setEnteredval(myvalue);
 
-    if (myvalue > 0) {
-      myvalue = web3.utils.toWei(myvalue);
-      setEnteredval(myvalue);
+        let tokensInputPrice = await contractOf.methods
+          .getBnbToTokenInputPrice(myvalue)
+          .call();
+        tokensInputPrice = web3.utils.fromWei(tokensInputPrice);
+        tokensInputPrice = parseFloat(tokensInputPrice).toFixed(7);
 
-      let tokensInputPrice = await contractOf.methods
-        .getBnbToTokenInputPrice(myvalue)
-        .call();
-      tokensInputPrice = web3.utils.fromWei(tokensInputPrice);
-      tokensInputPrice = parseFloat(tokensInputPrice).toFixed(7);
-
-      let miniumrcvd = (myMultiplyValue * tokensInputPrice) / 100;
-      let percentValue = tokensInputPrice - miniumrcvd;
-      percentValue = parseFloat(percentValue).toFixed(7);
-      setEstimate(tokensInputPrice);
-      setMinrecieved(percentValue);
-    } else {
-      setEstimate();
-      setMinrecieved();
+        let miniumrcvd = (myMultiplyValue * tokensInputPrice) / 100;
+        let percentValue = tokensInputPrice - miniumrcvd;
+        percentValue = parseFloat(percentValue).toFixed(7);
+        setEstimate(tokensInputPrice);
+        setMinrecieved(percentValue);
+      } else {
+        setEstimate();
+        setMinrecieved();
+      }
+    } catch (e) {
+      console.log("Error while Getting data against selected radio button", e);
     }
-  }catch(e){
-    console.log("Error while Getting data against selected radio button",e)
-  }
   };
   const enterRadioAmount3 = async () => {
-    try{
+    try {
+      let myMultiplyValue = 3;
+      const web3 = window.web3;
+      let myvalue = inputEl.current.value;
+      let contractOf = new web3.eth.Contract(
+        fountainContractAbi,
+        fountainContractAddress
+      );
 
- 
-    let myMultiplyValue = 3;
-    const web3 = window.web3;
-    let myvalue = inputEl.current.value;
-    let contractOf = new web3.eth.Contract(
-      fountainContractAbi,
-      fountainContractAddress
-    );
+      if (myvalue > 0) {
+        myvalue = web3.utils.toWei(myvalue);
+        setEnteredval(myvalue);
 
-    if (myvalue > 0) {
-      myvalue = web3.utils.toWei(myvalue);
-      setEnteredval(myvalue);
+        let tokensInputPrice = await contractOf.methods
+          .getBnbToTokenInputPrice(myvalue)
+          .call();
+        tokensInputPrice = web3.utils.fromWei(tokensInputPrice);
+        tokensInputPrice = parseFloat(tokensInputPrice).toFixed(7);
 
-      let tokensInputPrice = await contractOf.methods
-        .getBnbToTokenInputPrice(myvalue)
-        .call();
-      tokensInputPrice = web3.utils.fromWei(tokensInputPrice);
-      tokensInputPrice = parseFloat(tokensInputPrice).toFixed(7);
+        let miniumrcvd = (myMultiplyValue * tokensInputPrice) / 100;
+        let percentValue = tokensInputPrice - miniumrcvd;
+        percentValue = parseFloat(percentValue).toFixed(7);
 
-      let miniumrcvd = (myMultiplyValue * tokensInputPrice) / 100;
-      let percentValue = tokensInputPrice - miniumrcvd;
-      percentValue = parseFloat(percentValue).toFixed(7);
-
-      setEstimate(tokensInputPrice);
-      setMinrecieved(percentValue);
-    } else {
-      setEstimate();
-      setMinrecieved();
+        setEstimate(tokensInputPrice);
+        setMinrecieved(percentValue);
+      } else {
+        setEstimate();
+        setMinrecieved();
+      }
+    } catch (e) {
+      console.log(
+        "Error while getting amount against selected radio button",
+        e
+      );
     }
-  }catch(e){
-    console.log("Error while getting amount against selected radio button",e);
-  }
   };
   const enterRadioAmount5 = async () => {
-    try{
-    let myMultiplyValue = 5;
+    try {
+      let myMultiplyValue = 5;
 
-    const web3 = window.web3;
-    let myvalue = inputEl.current.value;
-    let contractOf = new web3.eth.Contract(
-      fountainContractAbi,
-      fountainContractAddress
-    );
-    if (myvalue > 0) {
-      myvalue = web3.utils.toWei(myvalue);
-      setEnteredval(myvalue);
+      const web3 = window.web3;
+      let myvalue = inputEl.current.value;
+      let contractOf = new web3.eth.Contract(
+        fountainContractAbi,
+        fountainContractAddress
+      );
+      if (myvalue > 0) {
+        myvalue = web3.utils.toWei(myvalue);
+        setEnteredval(myvalue);
 
-      let tokensInputPrice = await contractOf.methods
-        .getBnbToTokenInputPrice(myvalue)
-        .call();
-      tokensInputPrice = web3.utils.fromWei(tokensInputPrice);
-      tokensInputPrice = parseFloat(tokensInputPrice).toFixed(7);
+        let tokensInputPrice = await contractOf.methods
+          .getBnbToTokenInputPrice(myvalue)
+          .call();
+        tokensInputPrice = web3.utils.fromWei(tokensInputPrice);
+        tokensInputPrice = parseFloat(tokensInputPrice).toFixed(7);
 
-      let miniumrcvd = (myMultiplyValue * tokensInputPrice) / 100;
-      let percentValue = tokensInputPrice - miniumrcvd;
-      percentValue = parseFloat(percentValue).toFixed(7);
+        let miniumrcvd = (myMultiplyValue * tokensInputPrice) / 100;
+        let percentValue = tokensInputPrice - miniumrcvd;
+        percentValue = parseFloat(percentValue).toFixed(7);
 
-      setEstimate(tokensInputPrice);
-      setMinrecieved(percentValue);
-    } else {
-      setEstimate();
-      setMinrecieved();
+        setEstimate(tokensInputPrice);
+        setMinrecieved(percentValue);
+      } else {
+        setEstimate();
+        setMinrecieved();
+      }
+    } catch (e) {
+      console.log(
+        "Error while getting amount against selected radio button",
+        e
+      );
     }
-  }catch(e){
-    console.log("Error while getting amount against selected radio button",e);
-  }
   };
   const myOnchangeInputBuySwap = async () => {
-    try
-    {
-
-    
-    let myCurrentVal = mYentered.current.value;
-    if (myCurrentVal < 100) {
-      if (myCurrentVal >= 1) {
-        setTripType(myCurrentVal);
-
-        const web3 = window.web3;
-        let myvalue = inputEl.current.value;
-        let contractOf = new web3.eth.Contract(
-          fountainContractAbi,
-          fountainContractAddress
-        );
-
-        if (myvalue > 0) {
-          myvalue = web3.utils.toWei(myvalue);
-          setEnteredval(myvalue);
-
-          let tokensInputPrice = await contractOf.methods
-            .getBnbToTokenInputPrice(myvalue)
-            .call();
-          tokensInputPrice = web3.utils.fromWei(tokensInputPrice);
-          tokensInputPrice = parseFloat(tokensInputPrice).toFixed(7);
-
-          let miniumrcvd = (myCurrentVal * tokensInputPrice) / 100;
-          let percentValue = tokensInputPrice - miniumrcvd;
-          percentValue = parseFloat(percentValue).toFixed(7);
-
-          setEstimate(tokensInputPrice);
-          setMinrecieved(percentValue);
+    try {
+      let myCurrentVal = mYentered.current.value;
+      if (myCurrentVal < 100) {
+        if (myCurrentVal >= 1) {
           setTripType(myCurrentVal);
+
+          const web3 = window.web3;
+          let myvalue = inputEl.current.value;
+          let contractOf = new web3.eth.Contract(
+            fountainContractAbi,
+            fountainContractAddress
+          );
+
+          if (myvalue > 0) {
+            myvalue = web3.utils.toWei(myvalue);
+            setEnteredval(myvalue);
+
+            let tokensInputPrice = await contractOf.methods
+              .getBnbToTokenInputPrice(myvalue)
+              .call();
+            tokensInputPrice = web3.utils.fromWei(tokensInputPrice);
+            tokensInputPrice = parseFloat(tokensInputPrice).toFixed(7);
+
+            let miniumrcvd = (myCurrentVal * tokensInputPrice) / 100;
+            let percentValue = tokensInputPrice - miniumrcvd;
+            percentValue = parseFloat(percentValue).toFixed(7);
+
+            setEstimate(tokensInputPrice);
+            setMinrecieved(percentValue);
+            setTripType(myCurrentVal);
+          } else {
+            setEstimate();
+            setMinrecieved();
+          }
         } else {
-          setEstimate();
-          setMinrecieved();
+          toast.error("Slippage cannot be less than 1");
         }
       } else {
-        toast.error("Slippage cannot be less than 1");
+        toast.error("Slippage Cannot be over 100");
       }
-    } else {
-      toast.error("Slippage Cannot be over 100");
+    } catch (e) {
+      console.log("Error while getting values against entered amount");
     }
-  }catch(e){
-    console.log("Error while getting values against entered amount" );
-  }
   };
   const myRadioSellSplash1 = async () => {
-    try{
-    let myValFormul = 1;
-    const web3 = window.web3;
-    let myvalue = inputE2.current.value;
-    let contractOf = new web3.eth.Contract(
-      fountainContractAbi,
-      fountainContractAddress
-    );
+    try {
+      let myValFormul = 1;
+      const web3 = window.web3;
+      let myvalue = inputE2.current.value;
+      let contractOf = new web3.eth.Contract(
+        fountainContractAbi,
+        fountainContractAddress
+      );
 
-    if (myvalue > 0) {
-      myvalue = web3.utils.toWei(myvalue);
+      if (myvalue > 0) {
+        myvalue = web3.utils.toWei(myvalue);
 
-      setEnteredval(myvalue);
-      let tokensOutputPrice = await contractOf.methods
-        .getTokenToBnbInputPrice(myvalue)
-        .call();
-      tokensOutputPrice = web3.utils.fromWei(tokensOutputPrice);
+        setEnteredval(myvalue);
+        let tokensOutputPrice = await contractOf.methods
+          .getTokenToBnbInputPrice(myvalue)
+          .call();
+        tokensOutputPrice = web3.utils.fromWei(tokensOutputPrice);
 
-      let tenPercentVal = (tokensOutputPrice * 10) / 100;
-      tenPercentVal = tokensOutputPrice - tenPercentVal;
-      // tenPercentVal = web3.utils.fromWei(tenPercentVal);
-      let miniumrcvdDrip = (myValFormul * tenPercentVal) / 100;
-      let percentValue = tenPercentVal - miniumrcvdDrip;
-      setWithoutToFixed(percentValue);
+        let tenPercentVal = (tokensOutputPrice * 10) / 100;
+        tenPercentVal = tokensOutputPrice - tenPercentVal;
+        // tenPercentVal = web3.utils.fromWei(tenPercentVal);
+        let miniumrcvdDrip = (myValFormul * tenPercentVal) / 100;
+        let percentValue = tenPercentVal - miniumrcvdDrip;
+        setWithoutToFixed(percentValue);
 
-      percentValue = parseFloat(percentValue).toFixed(7);
-      tenPercentVal = parseFloat(tenPercentVal).toFixed(7);
+        percentValue = parseFloat(percentValue).toFixed(7);
+        tenPercentVal = parseFloat(tenPercentVal).toFixed(7);
 
-      // tokensOutputPrice = web3.utils.fromWei(tokensOutputPrice)
-      tokensOutputPrice = parseFloat(tokensOutputPrice).toFixed(7);
+        // tokensOutputPrice = web3.utils.fromWei(tokensOutputPrice)
+        tokensOutputPrice = parseFloat(tokensOutputPrice).toFixed(7);
 
-      percentValue = parseFloat(percentValue).toFixed(7);
-      setMinRecievedDrip(percentValue);
-      setEstimateDrip(tokensOutputPrice);
-      setTenperVal(tenPercentVal);
-    } else {
-      setEstimateDrip(0);
-      setMinRecievedDrip(0);
-      setTenperVal(0);
+        percentValue = parseFloat(percentValue).toFixed(7);
+        setMinRecievedDrip(percentValue);
+        setEstimateDrip(tokensOutputPrice);
+        setTenperVal(tenPercentVal);
+      } else {
+        setEstimateDrip(0);
+        setMinRecievedDrip(0);
+        setTenperVal(0);
+      }
+    } catch (e) {
+      console.log(
+        "Error while getting amount against selected radio button",
+        e
+      );
     }
-  }catch(e){
-    console.log("Error while getting amount against selected radio button",e);
-  }
   };
   const myRadioSellSplash3 = async () => {
-   try{
-    let myValFormul = 3;
-    const web3 = window.web3;
-    let myvalue = inputE2.current.value;
-    let contractOf = new web3.eth.Contract(
-      fountainContractAbi,
-      fountainContractAddress
-    );
+    try {
+      let myValFormul = 3;
+      const web3 = window.web3;
+      let myvalue = inputE2.current.value;
+      let contractOf = new web3.eth.Contract(
+        fountainContractAbi,
+        fountainContractAddress
+      );
 
-    if (myvalue > 0) {
-      myvalue = web3.utils.toWei(myvalue);
+      if (myvalue > 0) {
+        myvalue = web3.utils.toWei(myvalue);
 
-      setEnteredval(myvalue);
-      let tokensOutputPrice = await contractOf.methods
-        .getTokenToBnbInputPrice(myvalue)
-        .call();
-      tokensOutputPrice = web3.utils.fromWei(tokensOutputPrice);
+        setEnteredval(myvalue);
+        let tokensOutputPrice = await contractOf.methods
+          .getTokenToBnbInputPrice(myvalue)
+          .call();
+        tokensOutputPrice = web3.utils.fromWei(tokensOutputPrice);
 
-      let tenPercentVal = (tokensOutputPrice * 10) / 100;
-      tenPercentVal = tokensOutputPrice - tenPercentVal;
-      // tenPercentVal = web3.utils.fromWei(tenPercentVal);
-      let miniumrcvdDrip = (myValFormul * tenPercentVal) / 100;
-      let percentValue = tenPercentVal - miniumrcvdDrip;
-      setWithoutToFixed(percentValue);
+        let tenPercentVal = (tokensOutputPrice * 10) / 100;
+        tenPercentVal = tokensOutputPrice - tenPercentVal;
+        // tenPercentVal = web3.utils.fromWei(tenPercentVal);
+        let miniumrcvdDrip = (myValFormul * tenPercentVal) / 100;
+        let percentValue = tenPercentVal - miniumrcvdDrip;
+        setWithoutToFixed(percentValue);
 
-      percentValue = parseFloat(percentValue).toFixed(7);
-      tenPercentVal = parseFloat(tenPercentVal).toFixed(7);
+        percentValue = parseFloat(percentValue).toFixed(7);
+        tenPercentVal = parseFloat(tenPercentVal).toFixed(7);
 
-      // tokensOutputPrice = web3.utils.fromWei(tokensOutputPrice)
-      tokensOutputPrice = parseFloat(tokensOutputPrice).toFixed(7);
+        // tokensOutputPrice = web3.utils.fromWei(tokensOutputPrice)
+        tokensOutputPrice = parseFloat(tokensOutputPrice).toFixed(7);
 
-      percentValue = parseFloat(percentValue).toFixed(7);
-      setMinRecievedDrip(percentValue);
-      setEstimateDrip(tokensOutputPrice);
-      setTenperVal(tenPercentVal);
-    } else {
-      setEstimateDrip(0);
-      setMinRecievedDrip(0);
-      setTenperVal(0);
+        percentValue = parseFloat(percentValue).toFixed(7);
+        setMinRecievedDrip(percentValue);
+        setEstimateDrip(tokensOutputPrice);
+        setTenperVal(tenPercentVal);
+      } else {
+        setEstimateDrip(0);
+        setMinRecievedDrip(0);
+        setTenperVal(0);
+      }
+    } catch (e) {
+      console.log(
+        "Error while getting amount against selected radio button",
+        e
+      );
     }
-  }catch(e){
-    console.log("Error while getting amount against selected radio button",e);
-  }
   };
   const enterBuyAmount2 = async () => {
-    try{
-    const web3 = window.web3;
-    let myvalue = inputE2.current.value;
-    let contractOf = new web3.eth.Contract(
-      fountainContractAbi,
-      fountainContractAddress
-    );
+    try {
+      const web3 = window.web3;
+      let myvalue = inputE2.current.value;
+      let contractOf = new web3.eth.Contract(
+        fountainContractAbi,
+        fountainContractAddress
+      );
 
-    if (myvalue > 0) {
-      myvalue = web3.utils.toWei(myvalue);
+      if (myvalue > 0) {
+        myvalue = web3.utils.toWei(myvalue);
 
-      setEnteredval(myvalue);
-      let tokensOutputPrice = await contractOf.methods
-        .getTokenToBnbInputPrice(myvalue)
-        .call();
-      tokensOutputPrice = web3.utils.fromWei(tokensOutputPrice);
-      let tenPercentVal = (tokensOutputPrice * 10) / 100;
-      tenPercentVal = tokensOutputPrice - tenPercentVal;
-      // tenPercentVal = web3.utils.fromWei(tenPercentVal);
-      let miniumrcvdDrip = (tripType1 * tenPercentVal) / 100;
-      let percentValue = tenPercentVal - miniumrcvdDrip;
-      setWithoutToFixed(percentValue);
-      percentValue = parseFloat(percentValue).toFixed(7);
-      tenPercentVal = parseFloat(tenPercentVal).toFixed(7);
+        setEnteredval(myvalue);
+        let tokensOutputPrice = await contractOf.methods
+          .getTokenToBnbInputPrice(myvalue)
+          .call();
+        tokensOutputPrice = web3.utils.fromWei(tokensOutputPrice);
+        let tenPercentVal = (tokensOutputPrice * 10) / 100;
+        tenPercentVal = tokensOutputPrice - tenPercentVal;
+        // tenPercentVal = web3.utils.fromWei(tenPercentVal);
+        let miniumrcvdDrip = (tripType1 * tenPercentVal) / 100;
+        let percentValue = tenPercentVal - miniumrcvdDrip;
+        setWithoutToFixed(percentValue);
+        percentValue = parseFloat(percentValue).toFixed(7);
+        tenPercentVal = parseFloat(tenPercentVal).toFixed(7);
 
-      // tokensOutputPrice = web3.utils.fromWei(tokensOutputPrice)
-      tokensOutputPrice = parseFloat(tokensOutputPrice).toFixed(7);
+        // tokensOutputPrice = web3.utils.fromWei(tokensOutputPrice)
+        tokensOutputPrice = parseFloat(tokensOutputPrice).toFixed(7);
 
-      percentValue = parseFloat(percentValue).toFixed(7);
-      setMinRecievedDrip(percentValue);
-      setEstimateDrip(tokensOutputPrice);
-      setTenperVal(tenPercentVal);
-    } else {
-      setEstimateDrip(0);
-      setMinRecievedDrip(0);
-      setTenperVal(0);
+        percentValue = parseFloat(percentValue).toFixed(7);
+        setMinRecievedDrip(percentValue);
+        setEstimateDrip(tokensOutputPrice);
+        setTenperVal(tenPercentVal);
+      } else {
+        setEstimateDrip(0);
+        setMinRecievedDrip(0);
+        setTenperVal(0);
+      }
+    } catch (e) {
+      console.log("Error while getting values against entered amoount", e);
     }
-  }catch(e){
-    console.log("Error while getting values against entered amoount",e);
-  }
   };
   const myOnchangeInputSellSplash = async () => {
-   try{
-    let iEntered = mYEnter1.current.value;
-    if (iEntered < 100) {
-      if (iEntered >= 1) {
-        setTripType1(iEntered);
-        const web3 = window.web3;
-        let myvalue = inputE2.current.value;
-        let contractOf = new web3.eth.Contract(
-          fountainContractAbi,
-          fountainContractAddress
-        );
+    try {
+      let iEntered = mYEnter1.current.value;
+      if (iEntered < 100) {
+        if (iEntered >= 1) {
+          setTripType1(iEntered);
+          const web3 = window.web3;
+          let myvalue = inputE2.current.value;
+          let contractOf = new web3.eth.Contract(
+            fountainContractAbi,
+            fountainContractAddress
+          );
 
-        if (myvalue > 0) {
-          myvalue = web3.utils.toWei(myvalue);
+          if (myvalue > 0) {
+            myvalue = web3.utils.toWei(myvalue);
 
-          setEnteredval(myvalue);
-          let tokensOutputPrice = await contractOf.methods
-            .getTokenToBnbInputPrice(myvalue)
-            .call();
-          tokensOutputPrice = web3.utils.fromWei(tokensOutputPrice);
+            setEnteredval(myvalue);
+            let tokensOutputPrice = await contractOf.methods
+              .getTokenToBnbInputPrice(myvalue)
+              .call();
+            tokensOutputPrice = web3.utils.fromWei(tokensOutputPrice);
 
-          let tenPercentVal = (tokensOutputPrice * 10) / 100;
-          tenPercentVal = tokensOutputPrice - tenPercentVal;
-          // tenPercentVal = web3.utils.fromWei(tenPercentVal);
-          let miniumrcvdDrip = (iEntered * tenPercentVal) / 100;
-          let percentValue = tenPercentVal - miniumrcvdDrip;
-      setWithoutToFixed(percentValue);
+            let tenPercentVal = (tokensOutputPrice * 10) / 100;
+            tenPercentVal = tokensOutputPrice - tenPercentVal;
+            // tenPercentVal = web3.utils.fromWei(tenPercentVal);
+            let miniumrcvdDrip = (iEntered * tenPercentVal) / 100;
+            let percentValue = tenPercentVal - miniumrcvdDrip;
+            setWithoutToFixed(percentValue);
 
-          percentValue = parseFloat(percentValue).toFixed(7);
-          tenPercentVal = parseFloat(tenPercentVal).toFixed(7);
+            percentValue = parseFloat(percentValue).toFixed(7);
+            tenPercentVal = parseFloat(tenPercentVal).toFixed(7);
 
-          // tokensOutputPrice = web3.utils.fromWei(tokensOutputPrice)
-          tokensOutputPrice = parseFloat(tokensOutputPrice).toFixed(7);
+            // tokensOutputPrice = web3.utils.fromWei(tokensOutputPrice)
+            tokensOutputPrice = parseFloat(tokensOutputPrice).toFixed(7);
 
-          percentValue = parseFloat(percentValue).toFixed(7);
-          setMinRecievedDrip(percentValue);
-          setEstimateDrip(tokensOutputPrice);
-          setTenperVal(tenPercentVal);
+            percentValue = parseFloat(percentValue).toFixed(7);
+            setMinRecievedDrip(percentValue);
+            setEstimateDrip(tokensOutputPrice);
+            setTenperVal(tenPercentVal);
+          } else {
+            setEstimateDrip(0);
+            setMinRecievedDrip(0);
+            setTenperVal(0);
+          }
         } else {
-          setEstimateDrip(0);
-          setMinRecievedDrip(0);
-          setTenperVal(0);
+          toast.error("Slippage Cannot be less than 1");
         }
       } else {
-        toast.error("Slippage Cannot be less than 1");
+        toast.error("Slippage cannot be Over 100");
       }
-    } else {
-      toast.error("Slippage cannot be Over 100");
+    } catch (e) {
+      console.log("Error while getting values against entered amount", e);
     }
-  }catch(e){
-    console.log("Error while getting values against entered amount",e);
-  }
   };
   const myRadioSellSplash5 = async () => {
+    try {
+      let myValFormul = 5;
+      const web3 = window.web3;
+      let myvalue = inputE2.current.value;
+      let contractOf = new web3.eth.Contract(
+        fountainContractAbi,
+        fountainContractAddress
+      );
 
-    try{
-    let myValFormul = 5;
-    const web3 = window.web3;
-    let myvalue = inputE2.current.value;
-    let contractOf = new web3.eth.Contract(
-      fountainContractAbi,
-      fountainContractAddress
-    );
+      if (myvalue > 0) {
+        myvalue = web3.utils.toWei(myvalue);
 
-    if (myvalue > 0) {
-      myvalue = web3.utils.toWei(myvalue);
+        setEnteredval(myvalue);
+        let tokensOutputPrice = await contractOf.methods
+          .getTokenToBnbInputPrice(myvalue)
+          .call();
+        tokensOutputPrice = web3.utils.fromWei(tokensOutputPrice);
 
-      setEnteredval(myvalue);
-      let tokensOutputPrice = await contractOf.methods
-        .getTokenToBnbInputPrice(myvalue)
-        .call();
-      tokensOutputPrice = web3.utils.fromWei(tokensOutputPrice);
+        let tenPercentVal = (tokensOutputPrice * 10) / 100;
+        tenPercentVal = tokensOutputPrice - tenPercentVal;
 
-      let tenPercentVal = (tokensOutputPrice * 10) / 100;
-      tenPercentVal = tokensOutputPrice - tenPercentVal;
+        let miniumrcvdDrip = (myValFormul * tenPercentVal) / 100;
+        let percentValue = tenPercentVal - miniumrcvdDrip;
+        setWithoutToFixed(percentValue);
 
-      let miniumrcvdDrip = (myValFormul * tenPercentVal) / 100;
-      let percentValue = tenPercentVal - miniumrcvdDrip;
-      setWithoutToFixed(percentValue);
-      
-      percentValue = parseFloat(percentValue).toFixed(7);
-      tenPercentVal = parseFloat(tenPercentVal);
-      tokensOutputPrice = parseFloat(tokensOutputPrice).toFixed(7);
+        percentValue = parseFloat(percentValue).toFixed(7);
+        tenPercentVal = parseFloat(tenPercentVal);
+        tokensOutputPrice = parseFloat(tokensOutputPrice).toFixed(7);
 
-      percentValue = parseFloat(percentValue).toFixed(7);
-      setMinRecievedDrip(percentValue);
-      setEstimateDrip(tokensOutputPrice);
-      setTenperVal(tenPercentVal);
-    } else {
-      setEstimateDrip(0);
-      setMinRecievedDrip(0);
-      setTenperVal(0);
-    }
-  }catch(e){
-      console.log("Error while getting amount against selected radio button",e);
+        percentValue = parseFloat(percentValue).toFixed(7);
+        setMinRecievedDrip(percentValue);
+        setEstimateDrip(tokensOutputPrice);
+        setTenperVal(tenPercentVal);
+      } else {
+        setEstimateDrip(0);
+        setMinRecievedDrip(0);
+        setTenperVal(0);
+      }
+    } catch (e) {
+      console.log(
+        "Error while getting amount against selected radio button",
+        e
+      );
     }
   };
   const swapBnbtoToken = async () => {
@@ -601,56 +609,61 @@ const Swap = ({setOneTokenPrice}) => {
     try {
       const web3 = window.web3;
       let acc = await loadWeb3();
-      if(acc == "No Wallet"){
-        toast.error("No Wallet Connected")
-      }else {let myvalue = inputEl.current.value;
-      if (parseFloat(myvalue) > 0) {
-        if (parseFloat(usersBalance) > parseFloat(myvalue)) {
-          myvalue = web3.utils.toWei(myvalue);
-          let contractOf = new web3.eth.Contract(
-            fountainContractAbi,
-            fountainContractAddress
-          );
-          let tokensInputPrice = await contractOf.methods
-            .getBnbToTokenInputPrice(myvalue)
-            .call();
-          let miniumrcvd = (tripType * tokensInputPrice) / 100;
-          let percentValue = tokensInputPrice - miniumrcvd;
-          percentValue = percentValue.toString();
-          let b = bigInt(percentValue);
-          let convertValue = b.value.toString();
+      if (acc == "No Wallet") {
+        toast.error("No Wallet Connected");
+      } else {
+        let myvalue = inputEl.current.value;
+        if (parseFloat(myvalue) > 0) {
+          if (parseFloat(usersBalance) > parseFloat(myvalue)) {
+            myvalue = web3.utils.toWei(myvalue);
+            let contractOf = new web3.eth.Contract(
+              fountainContractAbi,
+              fountainContractAddress
+            );
+            let tokensInputPrice = await contractOf.methods
+              .getBnbToTokenInputPrice(myvalue)
+              .call();
+            let miniumrcvd = (tripType * tokensInputPrice) / 100;
+            let percentValue = tokensInputPrice - miniumrcvd;
+            percentValue = percentValue.toString();
+            let b = bigInt(percentValue);
+            let convertValue = b.value.toString();
 
-          if (percentValue > 0) {
-            let trHash = ""
-            await contractOf.methods
-              .bnbToTokenSwapInput(convertValue)
-              .send({
-                from: acc,
-                value: myvalue.toString(),
-              })
-              .on("transactionHash",async(hash)=>{
-                let data = {
-                  hash:hash,
-                  toAddress :fountainContractAddress,
-                  fromAddress : acc,
-                  id:acc,
-                  amount:inputEl.current.value.toString()
-                }
-               await axios.post("https://splash-test-app.herokuapp.com/api/users/postEvents",data);
-              })
-      
-            toast.success("Transaction confirmed");
+            if (percentValue > 0) {
+              let trHash = "";
+              await contractOf.methods
+                .bnbToTokenSwapInput(convertValue)
+                .send({
+                  from: acc,
+                  value: myvalue.toString(),
+                })
+                .on("transactionHash", async (hash) => {
+                  let data = {
+                    hash: hash,
+                    toAddress: fountainContractAddress,
+                    fromAddress: acc,
+                    id: acc,
+                    amount: inputEl.current.value.toString(),
+                  };
+                  await axios.post(
+                    "https://splash-test-app.herokuapp.com/api/users/postEvents",
+                    data
+                  );
+                });
+
+              toast.success("Transaction confirmed");
+            } else {
+              toast.error("Please Select Slippage Tolerance");
+            }
           } else {
-            toast.error("Please Select Slippage Tolerance");
+            toast.error(
+              "Entered Amount is greater than Your balance. Please Recharge."
+            );
           }
         } else {
-          toast.error(
-            "Entered Amount is greater than Your balance. Please Recharge."
-          );
+          toast.error("Seems Like You Forgot to Enter Amount");
         }
-      } else {
-        toast.error("Seems Like You Forgot to Enter Amount");
-      }}
+      }
     } catch (e) {
       console.log("Error ; ", e);
       toast.error("Transaction Failed");
@@ -658,20 +671,21 @@ const Swap = ({setOneTokenPrice}) => {
   };
 
   const bnbSwapSell = async () => {
-
     await enterBuyAmount2();
     try {
       let acc = await loadWeb3();
       const web3 = window.web3;
-     
+
       let myvalue = inputE2.current.value;
       myvalue = parseFloat(myvalue);
       // minRecievedDrip
-      
+
       if (myvalue >= 1) {
-        let tokenContractOf = new web3.eth.Contract(faucetTokenAbi, faucetTokenAddress);
-          
-           
+        let tokenContractOf = new web3.eth.Contract(
+          faucetTokenAbi,
+          faucetTokenAddress
+        );
+
         if (parseFloat(userDripBalance) >= myvalue) {
           myvalue = myvalue.toString();
           let myAllowance = await tokenContractOf.methods
@@ -681,8 +695,7 @@ const Swap = ({setOneTokenPrice}) => {
             let myvalue1 = web3.utils.toWei(myvalue);
 
             if (parseFloat(myAllowance) >= parseFloat(myvalue1)) {
-          
-              let val = withouttofixed.toString()
+              let val = withouttofixed.toString();
               let parameter = web3.utils.toWei(val);
 
               let contractOf = new web3.eth.Contract(
@@ -698,18 +711,19 @@ const Swap = ({setOneTokenPrice}) => {
                   .send({
                     from: acc,
                   })
-                  .on("transactionHash",async(hash)=>{
+                  .on("transactionHash", async (hash) => {
                     let data = {
-                      hash:hash,
-                      toAddress :fountainContractAddress,
-                      fromAddress : acc,
-                      id:acc,
-                      amount:inputE2.current.value.toString()
-                    }
-                    await axios.post("https://splash-test-app.herokuapp.com/api/users/postEvents",data);
-                  })
-                
-                 
+                      hash: hash,
+                      toAddress: fountainContractAddress,
+                      fromAddress: acc,
+                      id: acc,
+                      amount: inputE2.current.value.toString(),
+                    };
+                    await axios.post(
+                      "https://splash-test-app.herokuapp.com/api/users/postEvents",
+                      data
+                    );
+                  });
 
                 toast.success("Transaction Confirmed");
               } else {
@@ -726,7 +740,6 @@ const Swap = ({setOneTokenPrice}) => {
         } else {
           toast.error("In Sufficient balance please recharge");
         }
-      
       } else {
         toast.error("Amount cannot be less than 1");
       }
@@ -773,22 +786,20 @@ const Swap = ({setOneTokenPrice}) => {
       let myvalue = inputE2.current.value;
       if (myvalue > 0) {
         let myvalue1 = web3.utils.toWei(myvalue);
-    
+
         let tokenContractOf = new web3.eth.Contract(
           faucetTokenAbi,
           faucetTokenAddress
         );
-            
-           
+
         setisToogle(true);
-              await tokenContractOf.methods
-                .approve(fountainContractAddress, web3.utils.toWei(myvalue1))
-                .send({
-                  from: acc,
-                });
-              toast.success("Transaction Confirmed");
-              setisToogle(false);
-            
+        await tokenContractOf.methods
+          .approve(fountainContractAddress, web3.utils.toWei(myvalue1))
+          .send({
+            from: acc,
+          });
+        toast.success("Transaction Confirmed");
+        setisToogle(false);
       } else {
         toast.error("Looks Like You Forgot to Enter Amount");
       }
@@ -819,8 +830,7 @@ const Swap = ({setOneTokenPrice}) => {
                       <div className="col">
                         <span className="luck-title  notranslate fw-bold">
                           {/* {t("FOUNTAIN.1")} */}
-                          <b style={{fontFamily:"Jost"}}>{t("TheWell.1")}</b>
-                          
+                          <b style={{ fontFamily: "Jost" }}>{t("TheWell.1")}</b>
                         </span>
                       </div>
                     </div>
@@ -845,7 +855,10 @@ const Swap = ({setOneTokenPrice}) => {
                           {t("AVAX/Splash.1")} {division}
                         </span>
                       </p>
-                      <p className="text-small fst-italic" style={{ backgroundColor: "#4e2e4b" }}>
+                      <p
+                        className="text-small fst-italic"
+                        style={{ backgroundColor: "#30332f" }}
+                      >
                         {t("AVAX/Splash.1")} ≈ {oneDripPrice} {t("USDT.1")}
                       </p>
                     </div>
@@ -867,7 +880,10 @@ const Swap = ({setOneTokenPrice}) => {
                           {cBnbBalance}
                         </span>
                       </p>
-                      <p className="text-small fst-italic" style={{ backgroundColor: "#4e2e4b" }}>
+                      <p
+                        className="text-small fst-italic"
+                        style={{ backgroundColor: "#30332f" }}
+                      >
                         {t("AVAX.1")} ≈{bnbPrice} {t("USDT.1")}
                       </p>
                     </div>
@@ -889,7 +905,10 @@ const Swap = ({setOneTokenPrice}) => {
                           {cDripBalance}
                         </span>
                       </p>
-                      <p className="text-small fst-italic" style={{ backgroundColor: "#4e2e4b" }}>
+                      <p
+                        className="text-small fst-italic"
+                        style={{ backgroundColor: "#30332f" }}
+                      >
                         {t("Splash.1")} ≈{dripUsdtprice}
                         {t("USDT.1")}
                       </p>
@@ -902,7 +921,7 @@ const Swap = ({setOneTokenPrice}) => {
               <div className="container col-12 col-xl-6 col-lg-6 col-md-6 mb-4">
                 <div
                   className="card  text-white"
-                  style={{ backgroundColor: "#4e2e4b" }}
+                  style={{ backgroundColor: "#30332f" }}
                 >
                   <div className="card-body">
                     {/* <p className="card-text"></p> */}
@@ -927,14 +946,11 @@ const Swap = ({setOneTokenPrice}) => {
                             </div>
                             <div className="col-9 text-right fst-italic user2">
                               {" "}
-                              <p>
-                                {t("AVAXBalance.1")}:
-                                </p>
-                                <p className="user-balance text-white fst-italic">
-                                  {" "}
-                                  {usersBalance}
-                                </p>
-                             
+                              <p>{t("AVAXBalance.1")}:</p>
+                              <p className="user-balance text-white fst-italic">
+                                {" "}
+                                {usersBalance}
+                              </p>
                             </div>
                           </div>
                           <div role="group" className="input-group">
@@ -942,7 +958,7 @@ const Swap = ({setOneTokenPrice}) => {
                               ref={inputEl}
                               onChange={() => enterBuyAmount1()}
                               type="number"
-                              placeholder="AVAX"
+                              placeholder="FTM"
                               className="form-control"
                               id="__BVID__90"
                             />
@@ -1083,7 +1099,6 @@ const Swap = ({setOneTokenPrice}) => {
                                                 onChange={async () =>
                                                   await myOnchangeInputBuySwap()
                                                 }
-                                            
                                               />
                                               <div className="input-group-append">
                                                 <button
@@ -1146,7 +1161,7 @@ const Swap = ({setOneTokenPrice}) => {
               <div className="container col-12 col-xl-6 col-lg-6 col-md-6 mb-4">
                 <div
                   className="card "
-                  style={{ backgroundColor: "#4e2e4b", color: "#dacc79" }}
+                  style={{ backgroundColor: "#30332f", color: "#dacc79" }}
                 >
                   <div className="card-body">
                     {/* <p className="card-text"></p> */}
@@ -1334,7 +1349,6 @@ const Swap = ({setOneTokenPrice}) => {
                                                 onChange={async () =>
                                                   await myOnchangeInputSellSplash()
                                                 }
-                                               
                                               />
                                               <div className="input-group-append">
                                                 <button
@@ -1441,35 +1455,27 @@ const Swap = ({setOneTokenPrice}) => {
                 <div className="row mb-4 mt-2">
                   <div className="container col-12 text-center ">
                     <h1 className="fw-bold">
-                      <b style={{fontFamily:"Jost"}}>
-
-                      {t("Chart.1")}
-                      </b>
-                      </h1>
+                      <b style={{ fontFamily: "Jost" }}>{t("Chart.1")}</b>
+                    </h1>
                   </div>
 
                   {/* <div id="chartContainer" style={{height: '370px', width: '100%'}}><div className="canvasjs-chart-container" style={{position: 'relative', textAlign: 'left', cursor: 'auto', direction: 'ltr'}}><canvas className="canvasjs-chart-canvas" width={1140} height={370} style={{position: 'absolute', userSelect: 'none'}} /><canvas className="canvasjs-chart-canvas" width={1140} height={370} style={{position: 'absolute', WebkitTapHighlightColor: 'transparent', userSelect: 'none', cursor: 'default'}} /><div className="canvasjs-chart-toolbar" style={{position: 'absolute', right: '1px', top: '1px', border: '1px solid transparent'}}><button state="pan" type="button" title="Pan" style={{display: 'none', backgroundColor: 'white', color: 'black', borderTop: 'none', borderRight: '1px solid rgb(33, 150, 243)', borderBottom: 'none', borderLeft: 'none', borderImage: 'initial', userSelect: 'none', padding: '5px 12px', cursor: 'pointer', float: 'left', width: '40px', height: '25px', outline: '0px', verticalAlign: 'baseline', lineHeight: 0}}><img style={{height: '95%', pointerEvents: 'none'}} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAICSURBVEhLxZbPahNRGMUn/5MpuAiBEAIufQGfzr5E40YptBXajYzudCEuGqS+gGlrFwquDGRTutBdYfydzJ3LzeQmJGZue+Dw/Z17Mnfmu5Pof9Hr9Z61Wq0bWZMKj263O6xWq99wU9lOpzPMKgEhEcRucNOcioOK+0RzBhNvt9tPV4nmVF19+OWhVqt9xXgFXZq+8lCv119UKpUJ7iX2FmvFTKz8RH34YdBsNk8wVtjE4fGYwm8wrrDi3WBG5oKXZGRSS9hGuNFojLTe2lFz5xThWZIktayyiE2FdT3rzXBXz7krKiL8c17wAKFDjCus2AvW+YGZ9y2JF0VFRuMPfI//rsCE/C+s26s4gQu9ul7r4NteKx7H8XOC724xNNGbaNu++IrBqbOV7Tj3FgMRvc/YKOr3+3sE47wgEt/Bl/gaK5cHbNU11vYSXylfpK7XOvjuumPp4Wcoipu30Qsez2uMXYz4lfI+mOmwothY+SLiXJy7mKVpWs3Si0CoOMfeI9Od43Wic+jO+ZVv+crsm9QSNhUW9LXSeoPBYLXopthGuFQgdIxxhY+UDwlt1x5CZ1hX+NTUdt/OIvjKaDSmuOJfaIVNPKX+W18j/PLA2/kR44p5Sd8HbHngT/yTfNRWUXX14ZcL3wmX0+TLf8YO7CGT8yFE5zB3/gney25/OETRP9CtPDFe5jShAAAAAElFTkSuQmCC" alt="Pan" /></button><button state="reset" type="button" title="Reset" style={{display: 'none', backgroundColor: 'white', color: 'black', borderTop: 'none', borderRight: '0px solid rgb(33, 150, 243)', borderBottom: 'none', borderLeft: 'none', borderImage: 'initial', userSelect: 'none', padding: '5px 12px', cursor: 'pointer', float: 'left', width: '40px', height: '25px', outline: '0px', verticalAlign: 'baseline', lineHeight: 0}}><img style={{height: '95%', pointerEvents: 'none'}} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAeCAYAAABJ/8wUAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPjSURBVFhHxVdJaFNRFP1J/jwkP5MxsbaC1WJEglSxOFAXIsFpVRE3ggi1K90obioRRBA33XXnQnciirhQcMCdorgQxBkXWlREkFKsWkv5npvckp/XnzRpKh64kLw733fffe9L/wrL0+mVUdO8uTSZ3MBL/we2qg4rkuSpodCELstXE46ziVkLQ6FQcGOmeSSq6wd4aV50d3drWjj8kQKZJTUc9kxFGenv79dZrDksTSTWWJp2QYtEPiErysyzdX0LsxsCQR8keX8gs6RHIk8ysdgKFg2G53mhuOPsshTlBjKaFo1g7SqLNoShKLdFXT8huQ/paLSbxatYnc2mHMM4hr18Vi8TIvCmXF3vYrW6cF23gGTOk0M1wA4RKvOmq6vLZRVJipvmSWT6tZ6CSEYkco5V50VPT4+D7RwOqi6RiSZm0fJ+vggSqkeoypdsNmuyelNwbXsbgvkWYMtzDWNvWaijoyOBqE+hVK8abcssUeXQ/YfKyi0gFYv1Ipgfoj34fYGTJLOYJA0ODirok32GLN8XhUWCwSes1hIwBg6LydJ/tEeRRapAdUp+wSAiZchtZZWWgAZ+JNpD8peYXQVK9UwUxNpzOK8pq97kURZhYTCKBwPD7h2zK+js7Myi7D8Fod+0TkMI8+EMAngLGc/WtBFWawkFHFnoj/t9KLgGmF0B3QfkxC+EarxkdhnFYlFLY06USqUwL7UMjICHfh/wOc2sCqhpxGbCkLvL7EUDbF73+6DkmVWB6zi7xUDQSLeYvWjAILvm9zEnkJhlbRcDQZcv6Kg2AipyT/Axw6wKlqVSqxDdjF8Izfod13qURdrG/nxehY+xGh+h0CSzKygGvSNQIcc097BI24jb9hax6kj2E7OrMFX1il+ICEf2NrPbhiXLl+fYl+U7zK4iYdsDcyLGf+ofFlkwcN+s10KhmpuYhhtm0hCLVIFL0MDsqNlDIqy9x2CLs1jL6OvrI7vPRbtohXG6eFmsFnHDGAp6n9AgyuVySRZrGvROxRgIfLXhzjrNYnNBUxNX/dMgRWT1mt4XLDovaApD53E9W3ilNX5M55LJHpRtIsgAvciR4WWcgK2Dvb1YqgXevmF8z2zEBTcKG39EfSKsT9EbhVUaI2FZO+oZIqImxol6j66/hcAu4sSN4vc1ZPoKeoE6RGhYL2YYA+ymOSSi0Z0wWntbtkGUWCvfSDXIxONraZ/FY90KUfNTpfC5spnNLgxoYNnR9RO4F8ofXEHOgogCQE99w+fF2Xw+b7O59rEOsyRqGEfpVoaDMQQ1CZrG46bcM6AZ0C/wPqNfHliqejyTySxh9TqQpL+xmbIlkB9SlAAAAABJRU5ErkJggg==" alt="Reset" /></button></div><div className="canvasjs-chart-tooltip" style={{position: 'absolute', height: 'auto', boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 2px 2px', zIndex: 1000, pointerEvents: 'none', display: 'none', borderRadius: '5px'}}><div style={{width: 'auto', height: 'auto', minWidth: '50px', lineHeight: 'auto', margin: '0px 0px 0px 0px', padding: '5px', fontFamily: 'Calibri, Arial, Georgia, serif', fontWeight: 'normal', fontStyle: 'italic', fontSize: '14px', color: '#000000', textShadow: '1px 1px 1px rgba(0, 0, 0, 0.1)', textAlign: 'left', border: '2px solid gray', background: 'rgba(255,255,255,.9)', textIndent: '0px', whiteSpace: 'nowrap', borderRadius: '5px', MozUserSelect: 'none', KhtmlUserSelect: 'none', WebkitUserSelect: 'none', msUserSelect: 'none', userSelect: 'none'}}> Sample Tooltip</div></div><a className="canvasjs-chart-credit" title="JavaScript Charts" style={{outline: 'none', margin: '0px', position: 'absolute', right: 'auto', top: '356px', color: 'dimgrey', textDecoration: 'none', fontSize: '11px', fontFamily: 'Calibri, "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif'}} tabIndex={-1} target="_blank" href="https://canvasjs.com/">CanvasJS.com</a></div></div> */}
                 </div>
                 <div>
                   {/* <Chart /> */}
-                  <iframe 
-                  width="100%"
-                  height="600"
-                  src="https://splassivetracker.web.app/"
-                  >
-
-                  </iframe>
+                  <iframe
+                    width="100%"
+                    height="600"
+                    src="https://splassivetracker.web.app/"
+                  ></iframe>
                 </div>
               </div>
             </div>
             <div className="row mb-4 mt-2">
               <div className="container col-12 text-center">
                 <h1 className="fw-bold">
-                  <b style={{fontFamily:"Jost"}}>
-
-                  {t("Stats.1")}
-                  </b>
-                  </h1>
+                  <b style={{ fontFamily: "Jost" }}>{t("Stats.1")}</b>
+                </h1>
                 <p style={{ color: "white", fontSize: "20px" }}>
                   {t(
                     "TheWellisthebestwaytoexchangevalueintheSplashNetwork!Herearethenumbers.1"
@@ -1499,8 +1505,11 @@ const Swap = ({setOneTokenPrice}) => {
               </div>
               <div className="container col-12 col-xl-4 col-lg-4 col-md-4 text-center">
                 <div className="price-top-part">
-                  <img src={contact} alt="" className=""
-                  style={{ width: "130px", backgroungColor: "white"}} 
+                  <img
+                    src={contact}
+                    alt=""
+                    className=""
+                    style={{ width: "130px", backgroungColor: "white" }}
                   />
                   <h5
                     className="mb-0 font-weight-semibold color-theme-1 mb-2 mt-2"
@@ -1516,7 +1525,10 @@ const Swap = ({setOneTokenPrice}) => {
                       {tSupllyFountain}
                     </span>
                   </p>
-                  <p className="text-small"> {t("DROPS.1")} ({t("Splash.1")} / {t("LOCKED.1")})</p>
+                  <p className="text-small">
+                    {" "}
+                    {t("DROPS.1")} ({t("Splash.1")} / {t("LOCKED.1")})
+                  </p>
                 </div>
               </div>
               <div className="container col-12 col-xl-4 col-lg-4 col-md-4 text-center">
