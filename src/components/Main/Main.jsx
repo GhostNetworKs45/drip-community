@@ -7,11 +7,11 @@ import van from "../../images/van.png";
 import transfer from "../../images/transfer.png";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios'
-import { dripTokenAddress, dripTokenAbi } from '../utils/DripToken';
-import { loadWeb3 } from "../api"
+import axios from "axios";
+import { dripTokenAddress, dripTokenAbi } from "../utils/DripToken";
+import { loadWeb3 } from "../api";
 import Web3 from "web3";
-const webSupply = new Web3("https://api.avax.network/ext/bc/C/rpc");
+const webSupply = new Web3("https://rpc.testnet.fantom.network/");
 
 const Main = () => {
   const { t, i18n } = useTranslation();
@@ -22,12 +22,13 @@ const Main = () => {
   let [dripTotalSupply, setDripTotalSupply] = useState(0);
   let [dripPlayers, setDripplayers] = useState(0);
   let [maxDailyReturn, setMaxdailyReturn] = useState(0);
-  let [eventDetail, setEventDetail] = useState([])
-
-
+  let [eventDetail, setEventDetail] = useState([]);
 
   const getData = async () => {
-    let tokenContractof = new webSupply.eth.Contract(dripTokenAbi, dripTokenAddress);
+    let tokenContractof = new webSupply.eth.Contract(
+      dripTokenAbi,
+      dripTokenAddress
+    );
     try {
       let drptrx = await tokenContractof.methods.totalTxs().call();
       let players = await tokenContractof.methods.players().call();
@@ -38,37 +39,40 @@ const Main = () => {
       setDripTotalSupply(ttlSply);
       setDripplayers(players);
     } catch (e) {
-      console.log("Error while Fetching Data In Main", e)
+      console.log("Error while Fetching Data In Main", e);
     }
-  }
+  };
   const getEventDetail = async () => {
     try {
       let acc = await loadWeb3();
       if (acc == "No Wallet") {
-        setEventDetail([])
+        setEventDetail([]);
       } else {
         let data = {
-          address: acc
-        }
-        let res = await axios.post("https://splash-test-app.herokuapp.com/api/users/getTransactionDetail", data)
-        setEventDetail(res.data)
+          address: acc,
+        };
+        let res = await axios.post(
+          "https://splash-test-app.herokuapp.com/api/users/getTransactionDetail",
+          data
+        );
+        setEventDetail(res.data);
       }
     } catch (e) {
       console.log("error while get events", e);
     }
-  }
+  };
   setInterval(() => {
-    getEventDetail()
-  },10000)
+    getEventDetail();
+  }, 10000);
   useEffect(() => {
     setInterval(() => {
       getData();
     }, 1000);
-    getEventDetail()
+    getEventDetail();
     return () => {
       window.scrollTo(0, 0);
-    }
-  }, [])
+    };
+  }, []);
   return (
     <div className="images">
       <div className="router-view">
@@ -80,8 +84,9 @@ const Main = () => {
                   <div className="container">
                     <div className="row">
                       <div className="col">
-                        <span className="luck-title notranslate"  
-                        style={{fontFamily:"Jost"}}
+                        <span
+                          className="luck-title notranslate"
+                          style={{ fontFamily: "Jost" }}
                         >
                           <b> {t("SplashNETWORK.1")}</b>
                         </span>
@@ -96,9 +101,6 @@ const Main = () => {
               >
                 {t("SplashNetworkisthelatestprojectdevelopedby.1")}{" "}
                 {t("SplassiveTeam.1")}.
-
-
-
               </div>
               <div
                 className="container col-12 col-xl-8 col-lg-8 col-md-8 text-white text2"
@@ -121,7 +123,6 @@ const Main = () => {
                 <div className="col-xl-6 col-lg-6 col-md-6 mb-4 pt-4 ">
                   <p className="col-11 white mb-3 text-justify" />
                   <p className="col-11 white text-center ">
-
                     <button
                       style={{ color: "#7c625a", fontSize: "20px" }}
                       type="button"
@@ -130,7 +131,6 @@ const Main = () => {
                     >
                       <b>{t("TRADE.1")}</b>
                     </button>
-
 
                     <button
                       style={{
@@ -145,7 +145,6 @@ const Main = () => {
                       <b>{t("STAKE.1")}</b>
                     </button>
 
-
                     <button
                       style={{
                         color: "#7c625a",
@@ -158,14 +157,9 @@ const Main = () => {
                     >
                       <b>{t("LIQUIDITYFARM.1")}</b>
                     </button>
-
-
                   </p>
                 </div>
-                <div
-                  className="col-xl-4 col-lg-4 col-md-4 mb-5 pt-4 mt-5"
-
-                >
+                <div className="col-xl-4 col-lg-4 col-md-4 mb-5 pt-4 mt-5">
                   <img src={I} className="mainimages" />
                 </div>
               </div>
@@ -173,12 +167,8 @@ const Main = () => {
 
             <div className="row mb-4 mt-2">
               <div className="container col-12 text-center">
-                <h1 data-v-2b20e1ea id="mainh1"
-                
-                >
-                <b
-                style={{fontFamily:"Jost"}}
-                >{t("STATS.1")}</b>  
+                <h1 data-v-2b20e1ea id="mainh1">
+                  <b style={{ fontFamily: "Jost" }}>{t("STATS.1")}</b>
                 </h1>
                 <p
                   data-v-2b20e1ea
@@ -233,9 +223,7 @@ const Main = () => {
                   <p className="text-large mb-2 text-white">
                     <span className="notranslate" />
                   </p>
-                  <p className="text-small"  >
-                    
-                  </p>
+                  <p className="text-small"></p>
                 </div>
               </div>
               <div className="container col-6 col-xl-3 col-lg-3 col-md-3 text-center">
@@ -285,9 +273,9 @@ const Main = () => {
                   <div
                     className="card text-white"
                     style={{
-                      backgroundColor: "#4e2e4b",
+                      backgroundColor: "#30332f",
                       color: "#dacc79",
-                      border: "2px solid #4e2e4b",
+                      border: "2px solid #30332f",
                     }}
                   >
                     <div className="tabs" id="__BVID__241">
@@ -322,47 +310,51 @@ const Main = () => {
                           role="tabpanel"
                           aria-hidden="false"
                           className="tab-pane active card-body "
-
                           id="__BVID__242"
                           aria-labelledby="__BVID__242___BV_tab_button__"
                         >
                           <p className="card-text"></p>
                           <div className="row">
-                            <div className="col-12 list" >
-                              {
-                                eventDetail.slice(0,5).map((item) => {
-                                  return (
-                                    <div
-                                      className="card d-flex flex-row mb-3"
-                                      style={{
-                                        backgroundColor: "#86ad74",
-                                        color: "#dacc79",
-                                        border: "2px solid #4e2e4b",
-                                      }}
-                                    >
-                                      <div className="d-flex flex-grow-1 min-width-zero">
-                                        <div className="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
-                                          <p className="w-20 w-xs-100">
-                                            {t("From.1")}&nbsp;{item.fromAddress.substring(0,9)+"..."+item.fromAddress.substring(item.fromAddress.length - 9)}
-                                          </p>
-                                          <p className="w-20 w-xs-100">{t("To.1")}
-                                            &nbsp;
-                                            {item.toAddress.substring(0,9)+"..."+item.toAddress.substring(item.toAddress.length - 9)}
-                                          </p>
-                                          <span className="mb-1 w-15 w-xs-100">
-                                            {t("Amount.1")}
-                                            &nbsp;
-                                            {item.amount}
-                                          </span>
-
-                                        </div>
+                            <div className="col-12 list">
+                              {eventDetail.slice(0, 5).map((item) => {
+                                return (
+                                  <div
+                                    className="card d-flex flex-row mb-3"
+                                    style={{
+                                      backgroundColor: "#86ad74",
+                                      color: "#dacc79",
+                                      border: "2px solid #30332f",
+                                    }}
+                                  >
+                                    <div className="d-flex flex-grow-1 min-width-zero">
+                                      <div className="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                                        <p className="w-20 w-xs-100">
+                                          {t("From.1")}&nbsp;
+                                          {item.fromAddress.substring(0, 9) +
+                                            "..." +
+                                            item.fromAddress.substring(
+                                              item.fromAddress.length - 9
+                                            )}
+                                        </p>
+                                        <p className="w-20 w-xs-100">
+                                          {t("To.1")}
+                                          &nbsp;
+                                          {item.toAddress.substring(0, 9) +
+                                            "..." +
+                                            item.toAddress.substring(
+                                              item.toAddress.length - 9
+                                            )}
+                                        </p>
+                                        <span className="mb-1 w-15 w-xs-100">
+                                          {t("Amount.1")}
+                                          &nbsp;
+                                          {item.amount}
+                                        </span>
                                       </div>
-
                                     </div>
-                                  )
-                                })
-                              }
-
+                                  </div>
+                                );
+                              })}
                             </div>
                           </div>
                           <p />

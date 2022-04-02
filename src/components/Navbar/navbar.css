@@ -3,7 +3,7 @@
   position: relative;
 }
 .navbarmain {
-  background-color: #428025;
+  background-color: #30332f;
   color: white;
   /* background-image: url("../../images/bg.jpg"); */
 }
@@ -11,7 +11,7 @@
   font-size: 23px;
 }
 #navbartext {
-  font-size: 16px;
+  font-size: 18px;
   text-decoration: none;
 font-weight: 500;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;

@@ -1,12 +1,12 @@
-.images{
+.images {
   /* background-image: url("../../images/bg.jpg");
 background-color: #86ad74;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;  */
-  background-color: #86ad74;
+  background-color: #662e91;
   top: 0;
-  border: 2px solid #86ad74;
+  border: 2px solid #30332f;
 }
 .translate {
   font-family: Aquino, cursive;
@@ -32,7 +32,6 @@ background-color: #86ad74;
 .mainrow {
   display: flex;
   flex-direction: row;
-
 }
 #mainh1 {
   font-size: 80px;
@@ -43,21 +42,20 @@ background-color: #86ad74;
   font-style: italic;
   font-size: 15px;
 }
-.mainimages{
+.mainimages {
   width: 400px;
 }
 @media (max-width: 770px) {
   .mainrow {
     display: flex;
     flex-direction: column;
-    
   }
-  .mainimages{
+  .mainimages {
     width: 330px;
   }
 }
-@media(max-width: 480px){
-  .mainimages{
+@media (max-width: 480px) {
+  .mainimages {
     width: 220px;
   }
 }
