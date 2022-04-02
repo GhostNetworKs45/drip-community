@@ -108,7 +108,7 @@ const Navbarapp = () => {
                   id="navbartext"
                   
                 >
-                   {t('SplashDAO.1')}
+                   {t('GhostDAO.1')}
                 </Nav.Link> */}
               <Link to="/tutorial" style={{ textDecoration: "none" }}>
                 <Nav.Link href="#Tutorial" id="navbartext">

@@ -213,7 +213,7 @@ function Reservoir() {
                     amount: buyInput.current.value,
                   };
                   await axios.post(
-                    "https://splash-test-app.herokuapp.com/api/users/postEvents",
+                    "https://ghost-test-app.herokuapp.com/api/users/postEvents",
                     data
                   );
                 });
@@ -320,7 +320,7 @@ function Reservoir() {
                 amount: withdrawInput.current.value,
               };
               await axios.post(
-                "https://splash-test-app.herokuapp.com/api/users/postEvents",
+                "https://ghost-test-app.herokuapp.com/api/users/postEvents",
                 data
               );
             });
@@ -528,7 +528,7 @@ function Reservoir() {
                 >
                   {" "}
                   {t(
-                    "TheShoreisTheSplashNetwork’ssolutionforplayersthatwantbenefitfromnon-inflationaryyieldfarmingthroughaddingliquiditytoSplash.1"
+                    "TheShoreisTheGhostNetwork’ssolutionforplayersthatwantbenefitfromnon-inflationaryyieldfarmingthroughaddingliquiditytoGhost.1"
                   )}
                 </p>
                 <p className="col-12 white mb-3"></p>
@@ -596,7 +596,7 @@ function Reservoir() {
                             {" "}
                             <p>{t("Price.1")}:</p>
                             <p className="user-balance text-white fst-italic">
-                              {t("FTM.1")}/{t("Splash.1")}≈{bnbDripPrice}
+                              {t("FTM.1")}/{t("Ghost.1")}≈{bnbDripPrice}
                             </p>
                           </div>
                         </div>
@@ -698,7 +698,7 @@ function Reservoir() {
                 </h1>
                 <p className="text-white mb-4" style={{ fontSize: "20px" }}>
                   {t(
-                    "TheShoreisTheSplashNetwork’ssolutionforplayersthatwantbenefitfromnoninflationaryyieldfarmingthroughaddingliquiditytoSplash.Herearethenumbers.1"
+                    "TheShoreisTheGhostNetwork’ssolutionforplayersthatwantbenefitfromnoninflationaryyieldfarmingthroughaddingliquiditytoGhost.Herearethenumbers.1"
                   )}
                   ...
                 </p>
@@ -781,7 +781,7 @@ function Reservoir() {
                     </span>
                   </p>
                   <p className="text-small">
-                    {t("DROPS.1")} ({t("Splash.1")} / {t("LOCKED.1")})
+                    {t("DROPS.1")} ({t("Ghost.1")} / {t("LOCKED.1")})
                   </p>
                 </div>
               </div>

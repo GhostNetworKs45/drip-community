@@ -36,7 +36,7 @@ const Footer = () => {
               className="col-sm-12 col-md-6 mb-2"
               style={{ color: "#dacc79", fontSize: "24px" }}
             >
-              2022 © {t("SplashNETWORK.1")}
+              2022 © {t("GhostNETWORK.1")}
             </div>
             <div className="social-icons col-sm-12 col-md-6 text-center d-flex justify-content-evenly">
               <p>

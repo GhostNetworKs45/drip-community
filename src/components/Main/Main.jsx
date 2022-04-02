@@ -52,7 +52,7 @@ const Main = () => {
           address: acc,
         };
         let res = await axios.post(
-          "https://splash-test-app.herokuapp.com/api/users/getTransactionDetail",
+          "https://ghost-test-app.herokuapp.com/api/users/getTransactionDetail",
           data
         );
         setEventDetail(res.data);
@@ -88,7 +88,7 @@ const Main = () => {
                           className="luck-title notranslate"
                           style={{ fontFamily: "Jost" }}
                         >
-                          <b> {t("SplashNETWORK.1")}</b>
+                          <b> {t("GhostNETWORK.1")}</b>
                         </span>
                       </div>
                     </div>
@@ -99,7 +99,7 @@ const Main = () => {
                 className="container col-12 col-xl-8 col-lg-8 col-md-8 text-white text1"
                 style={{ fontSize: "20px" }}
               >
-                {t("SplashNetworkisthelatestprojectdevelopedby.1")}{" "}
+                {t("GhostNetworkisthelatestprojectdevelopedby.1")}{" "}
                 {t("SplassiveTeam.1")}.
               </div>
               <div
@@ -107,7 +107,7 @@ const Main = () => {
                 style={{ fontSize: "20px" }}
               >
                 {t(
-                  "TheofficialtokenoftheSplashNetworkisSplash(SPLASH)ontheAvalancheChain(FTM)thatcapturesvaluebybeingscarce,deflationary,censorshipresistant,andbybeingbuiltonarobust,trulydecentralizedblockchain..1"
+                  "TheofficialtokenoftheGhostNetworkisGhost(GHOST)ontheAvalancheChain(FTM)thatcapturesvaluebybeingscarce,deflationary,censorshipresistant,andbybeingbuiltonarobust,trulydecentralizedblockchain..1"
                 )}
               </div>
               <br />
@@ -116,7 +116,7 @@ const Main = () => {
                 style={{ fontSize: "20px" }}
               >
                 {t(
-                  "TherecommendedexchangefortradingSplashistheTheWellcontractwhichcanbefounddirectlyontheplatformswebsiteundertheTheWelltab,asitallowsustowaivetheinitial10%taxonbuysandprovidesthelowestpricesandhighestliquidity,resultinginlessslippageforlargertrades..1"
+                  "TherecommendedexchangefortradingGhostistheTheWellcontractwhichcanbefounddirectlyontheplatformswebsiteundertheTheWelltab,asitallowsustowaivetheinitial10%taxonbuysandprovidesthelowestpricesandhighestliquidity,resultinginlessslippageforlargertrades..1"
                 )}
               </div>
               <div className="raw mainrow">
@@ -177,7 +177,7 @@ const Main = () => {
                   style={{ fontSize: "20px" }}
                 >
                   {t(
-                    "TheSplashtokencapturestheentirevalueoftheSplashNetworkandmakesitavailabletotheentireFTMCommunity.1"
+                    "TheGhosttokencapturestheentirevalueoftheGhostNetworkandmakesitavailabletotheentireFTMCommunity.1"
                   )}
                   !
                 </p>
@@ -243,7 +243,7 @@ const Main = () => {
                       {dripTotalSupply}
                     </span>
                   </p>
-                  <p className="text-small">{t("Splash.1")} ≈ 0</p>
+                  <p className="text-small">{t("Ghost.1")} ≈ 0</p>
                 </div>
               </div>
               <div className="container col-6 col-xl-3 col-lg-3 col-md-3 text-center">

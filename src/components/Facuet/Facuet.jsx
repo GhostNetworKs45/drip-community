@@ -73,7 +73,7 @@ const Facuet = ({ oneTokenPrice }) => {
   let [storeRefarl, setStoreRefral] = useState([]);
 
   // run air drop
-  let [checkSplash, setCheckSplash] = useState("1");
+  let [checkGhost, setCheckGhost] = useState("1");
   let [checkDirects, setCheckDirects] = useState("0");
   let [checkCompaign, setCheckCompaign] = useState("0");
   let [showCompaign, setShowCompaign] = useState([]);
@@ -241,7 +241,7 @@ const Facuet = ({ oneTokenPrice }) => {
             toast.error("Incorrrect palyer's Address");
           }
         } else {
-          toast.error("Looks like you forgot to enter Splash Amount");
+          toast.error("Looks like you forgot to enter Ghost Amount");
         }
       }
     } catch (e) {
@@ -291,7 +291,7 @@ const Facuet = ({ oneTokenPrice }) => {
         referee: enteredAddress,
       };
       let res = await axios.post(
-        "https://splash-test-app.herokuapp.com/api/users/getTreeRef",
+        "https://ghost-test-app.herokuapp.com/api/users/getTreeRef",
         data
       );
       let contractOf = new webSupply.eth.Contract(
@@ -433,7 +433,7 @@ const Facuet = ({ oneTokenPrice }) => {
                       amount: enteredVal,
                     };
                     await axios.post(
-                      "https://splash-test-app.herokuapp.com/api/users/postEvents",
+                      "https://ghost-test-app.herokuapp.com/api/users/postEvents",
                       data
                     );
                   });
@@ -497,7 +497,7 @@ const Facuet = ({ oneTokenPrice }) => {
                 referee: acc,
               };
               await axios.post(
-                "https://splash-test-app.herokuapp.com/api/users/treeReferral",
+                "https://ghost-test-app.herokuapp.com/api/users/treeReferral",
                 data
               );
               toast.success("Buddy updated");
@@ -537,7 +537,7 @@ const Facuet = ({ oneTokenPrice }) => {
                 amount: availabe,
               };
               await axios.post(
-                "https://splash-test-app.herokuapp.com/api/users/postEvents",
+                "https://ghost-test-app.herokuapp.com/api/users/postEvents",
                 data
               );
             });
@@ -646,7 +646,7 @@ const Facuet = ({ oneTokenPrice }) => {
               };
               let checkReferal = [];
               let referralData = await axios.post(
-                "https://splash-test-app.herokuapp.com/api/users/getTreeRef",
+                "https://ghost-test-app.herokuapp.com/api/users/getTreeRef",
                 data
               );
               if (referralData.data.length) {
@@ -668,7 +668,7 @@ const Facuet = ({ oneTokenPrice }) => {
                     parseFloat(web3.utils.fromWei(item.value.direct_bonus)) >=
                       checkDirects &&
                     parseFloat(web3.utils.fromWei(item.value.deposits)) >=
-                      checkSplash &&
+                      checkGhost &&
                     item.value.upline !==
                       "0x0000000000000000000000000000000000000000"
                   );
@@ -905,7 +905,7 @@ const Facuet = ({ oneTokenPrice }) => {
                 toast.error("You have not got any referral");
               }
             } else {
-              toast.error("Oops insufficient Splash balance");
+              toast.error("Oops insufficient Ghost balance");
             }
           } else {
             toast.error("Looks like you forgot to enter Budget amount");
@@ -931,12 +931,12 @@ const Facuet = ({ oneTokenPrice }) => {
           ) {
             if (sendAddress.length) {
               const web3 = window.web3;
-              let splashContract = new web3.eth.Contract(
+              let ghostContract = new web3.eth.Contract(
                 faucetTokenAbi,
                 faucetTokenAddress
               );
               let value = web3.utils.toWei(budgetRef.current.value);
-              await splashContract.methods
+              await ghostContract.methods
                 .approve(faucetContractAddress, value)
                 .send({ from: acc });
               toast.success("Transaction confirmed");
@@ -981,11 +981,11 @@ const Facuet = ({ oneTokenPrice }) => {
         if (parseFloat(budgetRef.current.value) > 0) {
           if (sendAddress.length) {
             const web3 = window.web3;
-            let splashContract = new web3.eth.Contract(
+            let ghostContract = new web3.eth.Contract(
               faucetTokenAbi,
               faucetTokenAddress
             );
-            let allowance = await splashContract.methods
+            let allowance = await ghostContract.methods
               .allowance(acc, faucetContractAddress)
               .call();
 
@@ -1064,7 +1064,7 @@ const Facuet = ({ oneTokenPrice }) => {
           referee: buddySearch.current.value,
         };
         let res = await axios.post(
-          "https://splash-test-app.herokuapp.com/api/users/getTreeRef",
+          "https://ghost-test-app.herokuapp.com/api/users/getTreeRef",
           data
         );
         if (res.data.length) {
@@ -1187,7 +1187,7 @@ const Facuet = ({ oneTokenPrice }) => {
                         className="text-small fst-italic"
                         style={{ backgroundColor: "#30332f" }}
                       >
-                        {t("Splash.1")}
+                        {t("Ghost.1")}
                       </p>
                     </div>
                   </div>
@@ -1237,7 +1237,7 @@ const Facuet = ({ oneTokenPrice }) => {
                         className="text-small fst-italic"
                         style={{ backgroundColor: "#30332f" }}
                       >
-                        {t("Splash.1")}
+                        {t("Ghost.1")}
                       </p>
                     </div>
                   </div>
@@ -1295,7 +1295,7 @@ const Facuet = ({ oneTokenPrice }) => {
                         style={{ color: "#7c625a", fontSize: "19px" }}
                       >
                         {t("Price.1")} {oneTokenPrice} {t("FTM.1")}/
-                        {t("Splash.1")}
+                        {t("Ghost.1")}
                       </span>{" "}
                     </div>
                   </div>
@@ -1312,7 +1312,7 @@ const Facuet = ({ oneTokenPrice }) => {
                       style={{ color: "#7c625a", fontSize: "19px" }}
                       to="/TheWELL"
                     >
-                      {t("GetSplash.1")}
+                      {t("GetGhost.1")}
                     </Link>
                     <Link
                       style={{ color: "#7c625a", fontSize: "19px" }}
@@ -1350,7 +1350,7 @@ const Facuet = ({ oneTokenPrice }) => {
                             <div className="col-6 text-right fst-italic">
                               {" "}
                               <p>
-                                {t("SplashBalance.1")}:
+                                {t("GhostBalance.1")}:
                                 <label className="user-balance text-white fst-italic">
                                   {userDripBalance}
                                 </label>
@@ -1361,7 +1361,7 @@ const Facuet = ({ oneTokenPrice }) => {
                             <input
                               ref={inputEl}
                               type="number"
-                              placeholder="Splash"
+                              placeholder="Ghost"
                               className="form-control"
                               id="__BVID__213"
                             />
@@ -1380,7 +1380,7 @@ const Facuet = ({ oneTokenPrice }) => {
                           </div>
                           <small className="form-text text-left fst-italic">
                             <p style={{ fontSize: "13px" }}>
-                              {t("Aminimumof1Splashrequiredfordeposits.1")}*
+                              {t("Aminimumof1Ghostrequiredfordeposits.1")}*
                             </p>
                           </small>
                           <small className="form-text text-left">
@@ -1526,7 +1526,7 @@ const Facuet = ({ oneTokenPrice }) => {
                 </div>
               </div>
               <div className="container col-12 col-xl-6 col-lg-6 col-md-6 mb-4">
-                <h2>{t("CheckoutWhoSplashed.1")}</h2>
+                <h2>{t("CheckoutWhoGhosted.1")}</h2>
                 <div
                   className="card text-white"
                   style={{
@@ -1624,7 +1624,7 @@ const Facuet = ({ oneTokenPrice }) => {
                           className="fst-italic"
                           style={{ fontSize: "16px" }}
                         >
-                          {netDepppost} {t("Splash.1")}
+                          {netDepppost} {t("Ghost.1")}
                         </span>
                       </div>
                     </div>
@@ -1639,7 +1639,7 @@ const Facuet = ({ oneTokenPrice }) => {
                           className="fst-italic"
                           style={{ fontSize: "16px" }}
                         >
-                          {Airdropsent} {t("Splash.1")}
+                          {Airdropsent} {t("Ghost.1")}
                         </span>
                       </div>
                     </div>
@@ -1975,32 +1975,32 @@ const Facuet = ({ oneTokenPrice }) => {
                                       <select
                                         class="select form-control fst-italic"
                                         onChange={(e) => {
-                                          setCheckSplash(e.target.value);
+                                          setCheckGhost(e.target.value);
                                         }}
                                       >
                                         <option value="1">
-                                          1+ {t("Splash.1")}
+                                          1+ {t("Ghost.1")}
                                         </option>
                                         <option value="25">
-                                          25+ {t("Splash.1")}
+                                          25+ {t("Ghost.1")}
                                         </option>
                                         <option value="50">
-                                          50+ {t("Splash.1")}
+                                          50+ {t("Ghost.1")}
                                         </option>
                                         <option value="100">
-                                          100+ {t("Splash.1")}
+                                          100+ {t("Ghost.1")}
                                         </option>
                                         <option value="250">
-                                          250+ {t("Splash.1")}
+                                          250+ {t("Ghost.1")}
                                         </option>
                                         <option value="500">
-                                          500+ {t("Splash.1")}
+                                          500+ {t("Ghost.1")}
                                         </option>
                                         <option value="1000">
-                                          1000+ {t("Splash.1")}
+                                          1000+ {t("Ghost.1")}
                                         </option>
                                         <option value="2000">
-                                          2000+ {t("Splash.1")}
+                                          2000+ {t("Ghost.1")}
                                         </option>
                                       </select>
                                     </div>
@@ -2057,7 +2057,7 @@ const Facuet = ({ oneTokenPrice }) => {
                                   >
                                     {t("Available.1")}:
                                     <label className="user-balance text-white fst-italic">
-                                      {userDripBalance} {t("Splash.1")}
+                                      {userDripBalance} {t("Ghost.1")}
                                     </label>
                                   </p>
                                   <p
@@ -2073,7 +2073,7 @@ const Facuet = ({ oneTokenPrice }) => {
                                     className="text-end"
                                     style={{ lineHeight: "30%" }}
                                   >
-                                    {t("EstimatedSplashperperson.1")}:
+                                    {t("EstimatedGhostperperson.1")}:
                                     <label className="user-balance text-white fst-italic">
                                       {estimatePerPerson}
                                     </label>
@@ -2352,7 +2352,7 @@ const Facuet = ({ oneTokenPrice }) => {
                                 >
                                   <input
                                     type="number"
-                                    placeholder="Splash"
+                                    placeholder="Ghost"
                                     ref={airAmount}
                                     className="form-control"
                                     id="__BVID__213"
@@ -2392,7 +2392,7 @@ const Facuet = ({ oneTokenPrice }) => {
                   style={{ fontSize: "20px" }}
                 >
                   {t(
-                    "PlayerscanparticipatebypurchasingSplashfromtheplatform'sTheWellpage,joininganotheruser’sSplashteam(1Splashminimumrequirement)DepositingSplashtotheTheTapcontractearnsaconsistent2%dailyreturnoftheirSplash(365%maximumpayout)passively.Playerscanalsocompoundtheirearningsthroughregulardeposits,rollingrewardsaswellasteambasedreferrals.Unlikemanyotherplatformspromisingaconsistentdaily%return,TheTap'scontractcannotdrainandwillALWAYSbeabletoprovidetheSplashthathasbeenrewarded.Splashrewardscomefroma10%taxonallSplashtransactionsexcludingbuysfromtheplatform'sTheWellpage..1"
+                    "PlayerscanparticipatebypurchasingGhostfromtheplatform'sTheWellpage,joininganotheruser’sGhostteam(1Ghostminimumrequirement)DepositingGhosttotheTheTapcontractearnsaconsistent2%dailyreturnoftheirGhost(365%maximumpayout)passively.Playerscanalsocompoundtheirearningsthroughregulardeposits,rollingrewardsaswellasteambasedreferrals.Unlikemanyotherplatformspromisingaconsistentdaily%return,TheTap'scontractcannotdrainandwillALWAYSbeabletoprovidetheGhostthathasbeenrewarded.Ghostrewardscomefroma10%taxonallGhosttransactionsexcludingbuysfromtheplatform'sTheWellpage..1"
                   )}
                 </p>
                 <p id="referral" />
@@ -2401,7 +2401,7 @@ const Facuet = ({ oneTokenPrice }) => {
                   style={{ fontSize: "20px" }}
                 >
                   {t(
-                    "IfthereiseverasituationwherethetaxpoolisnotenoughtopaySplashrewardsnewSplashwillbemintedtoensurerewardsarepaidout.GiventhegametheorybehindtheSplashnetwork,theprobabilitythatthesystemwillneedtomintnewSplashtopayrewardsisextremelylow.SinceSplashdepositedintoTheTaparesenttoaburnaddressandSplashisconstantlybeinglockedintheliquiditypoolthroughtheTheShorecontract,SplashistheonlydeflationarydailyROIplatform.ThebeststrategyforSplashistofocusonrealworldadoptionbybuildingoutyourteamthroughdirectreferrals,asyouwillreceivebonusrewardsfromreferralsontheirdepositsanddownlinebonusesfromplayerstheyreferbasedontheamountofWAVETokenheldinyourwallet.1"
+                    "IfthereiseverasituationwherethetaxpoolisnotenoughtopayGhostrewardsnewGhostwillbemintedtoensurerewardsarepaidout.GiventhegametheorybehindtheGhostnetwork,theprobabilitythatthesystemwillneedtomintnewGhosttopayrewardsisextremelylow.SinceGhostdepositedintoTheTaparesenttoaburnaddressandGhostisconstantlybeinglockedintheliquiditypoolthroughtheTheShorecontract,GhostistheonlydeflationarydailyROIplatform.ThebeststrategyforGhostistofocusonrealworldadoptionbybuildingoutyourteamthroughdirectreferrals,asyouwillreceivebonusrewardsfromreferralsontheirdepositsanddownlinebonusesfromplayerstheyreferbasedontheamountofWAVETokenheldinyourwallet.1"
                   )}
                   : 1-5000, 2-10000, 3-20000, 4-30000, 5-40000, 6-50000,
                   7-60000, 8-75000, 9-85000, 10-100000, 11-110000, 12-120000,

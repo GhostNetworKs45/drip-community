@@ -59,9 +59,9 @@ const Swap = ({ setOneTokenPrice }) => {
   const { t, i18n } = useTranslation();
   const inputEl = useRef();
   let inputE2 = useRef();
-  // for radio inputs Buy splash
+  // for radio inputs Buy Ghost
   let mYentered = useRef();
-  // for radio inputs Sell splash
+  // for radio inputs Sell Ghost
   let mYEnter1 = useRef();
 
   const getData = async () => {
@@ -366,7 +366,7 @@ const Swap = ({ setOneTokenPrice }) => {
       console.log("Error while getting values against entered amount");
     }
   };
-  const myRadioSellSplash1 = async () => {
+  const myRadioSellGhost1 = async () => {
     try {
       let myValFormul = 1;
       const web3 = window.web3;
@@ -414,7 +414,7 @@ const Swap = ({ setOneTokenPrice }) => {
       );
     }
   };
-  const myRadioSellSplash3 = async () => {
+  const myRadioSellGhost3 = async () => {
     try {
       let myValFormul = 3;
       const web3 = window.web3;
@@ -504,7 +504,7 @@ const Swap = ({ setOneTokenPrice }) => {
       console.log("Error while getting values against entered amoount", e);
     }
   };
-  const myOnchangeInputSellSplash = async () => {
+  const myOnchangeInputSellGhost = async () => {
     try {
       let iEntered = mYEnter1.current.value;
       if (iEntered < 100) {
@@ -558,7 +558,7 @@ const Swap = ({ setOneTokenPrice }) => {
       console.log("Error while getting values against entered amount", e);
     }
   };
-  const myRadioSellSplash5 = async () => {
+  const myRadioSellGhost5 = async () => {
     try {
       let myValFormul = 5;
       const web3 = window.web3;
@@ -646,7 +646,7 @@ const Swap = ({ setOneTokenPrice }) => {
                     amount: inputEl.current.value.toString(),
                   };
                   await axios.post(
-                    "https://splash-test-app.herokuapp.com/api/users/postEvents",
+                    "https://ghost-test-app.herokuapp.com/api/users/postEvents",
                     data
                   );
                 });
@@ -720,7 +720,7 @@ const Swap = ({ setOneTokenPrice }) => {
                       amount: inputE2.current.value.toString(),
                     };
                     await axios.post(
-                      "https://splash-test-app.herokuapp.com/api/users/postEvents",
+                      "https://ghost-test-app.herokuapp.com/api/users/postEvents",
                       data
                     );
                   });
@@ -852,14 +852,14 @@ const Swap = ({ setOneTokenPrice }) => {
                           style={{ color: "#ab9769", fontSize: "20px" }}
                         >
                           {" "}
-                          {t("FTM/Splash.1")} {division}
+                          {t("FTM/Ghost.1")} {division}
                         </span>
                       </p>
                       <p
                         className="text-small fst-italic"
                         style={{ backgroundColor: "#30332f" }}
                       >
-                        {t("FTM/Splash.1")} ≈ {oneDripPrice} {t("USDT.1")}
+                        {t("FTM/Ghost.1")} ≈ {oneDripPrice} {t("USDT.1")}
                       </p>
                     </div>
                   </div>
@@ -895,7 +895,7 @@ const Swap = ({ setOneTokenPrice }) => {
                         className="mb-0 font-weight-semibold color-theme-1 mb-2 mt-3  fst-italic"
                         style={{ color: "#7c625a" }}
                       >
-                        {t("SplashBalance.1")}{" "}
+                        {t("GhostBalance.1")}{" "}
                       </h5>
                       <p className="text-large  mb-2 text-white fst-italic">
                         <span
@@ -909,7 +909,7 @@ const Swap = ({ setOneTokenPrice }) => {
                         className="text-small fst-italic"
                         style={{ backgroundColor: "#30332f" }}
                       >
-                        {t("Splash.1")} ≈{dripUsdtprice}
+                        {t("Ghost.1")} ≈{dripUsdtprice}
                         {t("USDT.1")}
                       </p>
                     </div>
@@ -932,7 +932,7 @@ const Swap = ({ setOneTokenPrice }) => {
                             className="notranslate fst-italic"
                             style={{ fontSize: "20px" }}
                           >
-                            {t("BuySplash.1")}
+                            {t("BuyGhost.1")}
                           </p>
                         </h3>
                       </div>
@@ -1170,7 +1170,7 @@ const Swap = ({ setOneTokenPrice }) => {
                         <h3>
                           <span className="notranslate fst-italic">
                             <p style={{ fontSize: "20px" }}>
-                              {t("SELLSplash.1")}
+                              {t("SELLGhost.1")}
                             </p>
                           </span>
                         </h3>
@@ -1186,7 +1186,7 @@ const Swap = ({ setOneTokenPrice }) => {
                             <div className="col-9 text-right fst-italic">
                               {" "}
                               <p>
-                                {t("SplashBalance.1")}:
+                                {t("GhostBalance.1")}:
                                 <label className="user-balance text-white fst-italic">
                                   {userDripBalance}
                                 </label>{" "}
@@ -1197,7 +1197,7 @@ const Swap = ({ setOneTokenPrice }) => {
                             <input
                               ref={inputE2}
                               type="number"
-                              placeholder="Splash"
+                              placeholder="Ghost"
                               className="form-control"
                               id="__BVID__99"
                               onChange={() => enterBuyAmount2()}
@@ -1290,7 +1290,7 @@ const Swap = ({ setOneTokenPrice }) => {
                                               <div
                                                 className="radio-btn"
                                                 onClick={async () => {
-                                                  await myRadioSellSplash1();
+                                                  await myRadioSellGhost1();
                                                   setTripType1("1");
                                                 }}
                                               >
@@ -1306,7 +1306,7 @@ const Swap = ({ setOneTokenPrice }) => {
                                               <div
                                                 className="radio-btn"
                                                 onClick={async () => {
-                                                  await myRadioSellSplash3();
+                                                  await myRadioSellGhost3();
                                                   setTripType1("3");
                                                 }}
                                               >
@@ -1322,7 +1322,7 @@ const Swap = ({ setOneTokenPrice }) => {
                                               <div
                                                 className="radio-btn"
                                                 onClick={async () => {
-                                                  await myRadioSellSplash5();
+                                                  await myRadioSellGhost5();
                                                   setTripType1("5");
                                                 }}
                                               >
@@ -1347,7 +1347,7 @@ const Swap = ({ setOneTokenPrice }) => {
                                                 max={50}
                                                 className="form-control"
                                                 onChange={async () =>
-                                                  await myOnchangeInputSellSplash()
+                                                  await myOnchangeInputSellGhost()
                                                 }
                                               />
                                               <div className="input-group-append">
@@ -1438,7 +1438,7 @@ const Swap = ({ setOneTokenPrice }) => {
                                 htmlFor="__BVID__107"
                               >
                                 {" "}
-                                <p>{t("ApproveSplash.1")}</p>
+                                <p>{t("ApproveGhost.1")}</p>
                               </label>
                             </div>
                           </div>
@@ -1466,7 +1466,7 @@ const Swap = ({ setOneTokenPrice }) => {
                 </h1>
                 <p style={{ color: "white", fontSize: "20px" }}>
                   {t(
-                    "TheWellisthebestwaytoexchangevalueintheSplashNetwork!Herearethenumbers.1"
+                    "TheWellisthebestwaytoexchangevalueintheGhostNetwork!Herearethenumbers.1"
                   )}
                   ...
                 </p>
@@ -1488,7 +1488,7 @@ const Swap = ({ setOneTokenPrice }) => {
                       {tSupllyDrip}
                     </span>
                   </p>
-                  <p className="text-small fst-italic">{t("Splash.1")}</p>
+                  <p className="text-small fst-italic">{t("Ghost.1")}</p>
                 </div>
               </div>
               <div className="container col-12 col-xl-4 col-lg-4 col-md-4 text-center">
@@ -1515,7 +1515,7 @@ const Swap = ({ setOneTokenPrice }) => {
                   </p>
                   <p className="text-small">
                     {" "}
-                    {t("DROPS.1")} ({t("Splash.1")} / {t("LOCKED.1")})
+                    {t("DROPS.1")} ({t("Ghost.1")} / {t("LOCKED.1")})
                   </p>
                 </div>
               </div>
