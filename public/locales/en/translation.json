@@ -11,7 +11,7 @@
     "Whitepaper": {
         "1": "Whitepaper"
     },
-    "SplashDAO": {
+    "GhostDAO": {
         "1": "Ghost DAO"
     },
     "Tutorial": {
@@ -56,10 +56,10 @@
     "Approve": {
         "1": "Approve"
     },
-    "SplashNETWORK": {
+    "GhostNETWORK": {
         "1": "Ghost NETWORK"
     },
-    "SplashNetworkisthelatestprojectdevelopedby": {
+    "GhostNetworkisthelatestprojectdevelopedby": {
         "1": "Ghost Network is the latest project developed by"
     },
     "SplassiveTeam": {
@@ -74,10 +74,10 @@
     "andteam.": {
         "1": "and team."
     },
-    "TheofficialtokenoftheSplashNetworkisSplash(SPLASH)ontheAvalancheChain(FTM)thatcapturesvaluebybeingscarce,deflationary,censorshipresistant,andbybeingbuiltonarobust,trulydecentralizedblockchain.": {
+    "TheofficialtokenoftheGhostNetworkisGhost(GHOST)ontheAvalancheChain(FTM)thatcapturesvaluebybeingscarce,deflationary,censorshipresistant,andbybeingbuiltonarobust,trulydecentralizedblockchain.": {
         "1": "The official token of the Ghost Network is Ghost (GHOST) on the Fantom Chain (FTM) that captures value by being scarce, deflationary, censorship resistant, and by being built on a robust, truly decentralized blockchain."
     },
-    "TherecommendedexchangefortradingSplashistheTheWellcontractwhichcanbefounddirectlyontheplatformswebsiteundertheTheWelltab,asitallowsustowaivetheinitial10%taxonbuysandprovidesthelowestpricesandhighestliquidity,resultinginlessslippageforlargertrades.": {
+    "TherecommendedexchangefortradingGhostistheTheWellcontractwhichcanbefounddirectlyontheplatformswebsiteundertheTheWelltab,asitallowsustowaivetheinitial10%taxonbuysandprovidesthelowestpricesandhighestliquidity,resultinginlessslippageforlargertrades.": {
         "1": "The recommended exchange for trading Ghost is The Well contract which can be found directly on the platform's website under. The Well tab provides the lowest prices and highest liquidity, resulting in less slippage for larger trades."
     },
     "TRADE": {
@@ -92,7 +92,7 @@
     "STATS": {
         "1": "STATS"
     },
-    "TheSplashtokencapturestheentirevalueoftheSplashNetworkandmakesitavailabletotheentireFTMCommunity": {
+    "TheGhosttokencapturestheentirevalueoftheGhostNetworkandmakesitavailabletotheentireFTMCommunity": {
         "1": "The Ghost token captures the entire value of the Ghost Network and makes it available to the entire FTM Community"
     },
     "Players": {
@@ -107,7 +107,7 @@
     "Totalsupply": {
         "1": "Total supply"
     },
-    "Splash": {
+    "Ghost": {
         "1": "Ghost"
     },
     "Transactions": {
@@ -141,7 +141,7 @@
     "Price": {
         "1": "Price"
     },
-    "FTM/Splash": {
+    "FTM/Ghost": {
         "1": "FTM/Ghost"
     },
     "FTMBalance": {
@@ -153,12 +153,12 @@
     "FTM": {
         "1": "FTM"
     },
-    "SplashBalance": {
+    "GhostBalance": {
         "1": "Ghost Balance"
     }
 
     ,
-    "BuySplash": {
+    "BuyGhost": {
         "1": "Buy Ghost"
     }
 
@@ -175,7 +175,7 @@
     "Buy": {
         "1": "Buy"
     },
-    "SELLSplash": {
+    "SELLGhost": {
         "1": "SELL Ghost"
     }
 
@@ -189,7 +189,7 @@
     "Sell": {
         "1": "Sell"
     },
-    "ApproveSplash": {
+    "ApproveGhost": {
         "1": "Approve Ghost"
     },
     "Chart": {
@@ -198,7 +198,7 @@
     "Stats": {
         "1": "STATS"
     },
-    "TheWellisthebestwaytoexchangevalueintheSplashNetwork!Herearethenumbers": {
+    "TheWellisthebestwaytoexchangevalueintheGhostNetwork!Herearethenumbers": {
         "1": "The Well is the best way to exchange value in the Ghost Network! Here are the numbers"
     }
 
@@ -267,10 +267,10 @@
     "CopyReferralLink": {
         "1": "Copy Referral Link"
     },
-    "GetSplash": {
+    "GetGhost": {
         "1": "Get Ghost"
     },
-    "Aminimumof1Splashrequiredfordeposits": {
+    "Aminimumof1Ghostrequiredfordeposits": {
         "1": "A minimum of 1 Ghost required for deposits"
     },
     "A10%taxischargedondeposits": {
@@ -317,7 +317,7 @@
     "SupportMarketingandDevelopment": {
         "1": "Support Marketing and Development"
     },
-    "CheckoutWhoSplashed": {
+    "CheckoutWhoGhosted": {
         "1": "Checkout Who Ghosted"
     },
     "PlayerLookup": {
@@ -414,7 +414,7 @@
     "Numberofrecipients": {
         "1": "Number of recipients"
     },
-    "EstimatedSplashperperson": {
+    "EstimatedGhostperperson": {
         "1": "Estimated Ghost per person"
     },
     "SEND": {
@@ -438,10 +438,10 @@
     "About": {
         "1": "About"
     },
-    "PlayerscanparticipatebypurchasingSplashfromtheplatform'sTheWellpage,joininganotheruser’sSplashteam(1Splashminimumrequirement)DepositingSplashtotheTheTapcontractearnsaconsistent2%dailyreturnoftheirSplash(365%maximumpayout)passively.Playerscanalsocompoundtheirearningsthroughregulardeposits,rollingrewardsaswellasteambasedreferrals.Unlikemanyotherplatformspromisingaconsistentdaily%return,TheTap'scontractcannotdrainandwillALWAYSbeabletoprovidetheSplashthathasbeenrewarded.Splashrewardscomefroma10%taxonallSplashtransactionsexcludingbuysfromtheplatform'sTheWellpage.": {
+    "PlayerscanparticipatebypurchasingGhostfromtheplatform'sTheWellpage,joininganotheruser’sGhostteam(1Ghostminimumrequirement)DepositingGhosttotheTheTapcontractearnsaconsistent2%dailyreturnoftheirGhost(365%maximumpayout)passively.Playerscanalsocompoundtheirearningsthroughregulardeposits,rollingrewardsaswellasteambasedreferrals.Unlikemanyotherplatformspromisingaconsistentdaily%return,TheTap'scontractcannotdrainandwillALWAYSbeabletoprovidetheGhostthathasbeenrewarded.Ghostrewardscomefroma10%taxonallGhosttransactionsexcludingbuysfromtheplatform'sTheWellpage.": {
         "1": "Players can participate by purchasing Ghost from the platform's The WELL page, joining another user’s Ghost team (1 Ghost minimum requirement) Depositing Ghost to the The Tap contract earns a consistent 2% daily return of their Ghost (360% maximum payout) passively. Players can also compound their earnings through regular deposits, rolling rewards as well as team based referrals. Unlike many other platforms promising a consistent daily % return, The Tap's contract cannot drain and will ALWAYS be able to provide the Ghost that has been rewarded. Ghost rewards come from a 10% tax on all Ghost transactions on buys and sells from The WELL page."
     },
-    "IfthereiseverasituationwherethetaxpoolisnotenoughtopaySplashrewardsnewSplashwillbemintedtoensurerewardsarepaidout.GiventhegametheorybehindtheSplashnetwork,theprobabilitythatthesystemwillneedtomintnewSplashtopayrewardsisextremelylow.SinceSplashdepositedintoTheTaparesenttoaburnaddressandSplashisconstantlybeinglockedintheliquiditypoolthroughtheTheShorecontract,SplashistheonlydeflationarydailyROIplatform.ThebeststrategyforSplashistofocusonrealworldadoptionbybuildingoutyourteamthroughdirectreferrals,asyouwillreceivebonusrewardsfromreferralsontheirdepositsanddownlinebonusesfromplayerstheyreferbasedontheamountofWAVETokenheldinyourwallet": {
+    "IfthereiseverasituationwherethetaxpoolisnotenoughtopayGhostrewardsnewGhostwillbemintedtoensurerewardsarepaidout.GiventhegametheorybehindtheGhostnetwork,theprobabilitythatthesystemwillneedtomintnewGhosttopayrewardsisextremelylow.SinceGhostdepositedintoTheTaparesenttoaburnaddressandGhostisconstantlybeinglockedintheliquiditypoolthroughtheTheShorecontract,GhostistheonlydeflationarydailyROIplatform.ThebeststrategyforGhostistofocusonrealworldadoptionbybuildingoutyourteamthroughdirectreferrals,asyouwillreceivebonusrewardsfromreferralsontheirdepositsanddownlinebonusesfromplayerstheyreferbasedontheamountofWAVETokenheldinyourwallet": {
         "1": "If there is ever a situation where the tax pool is not enough to pay Ghost rewards new Ghost will be minted to ensure rewards are paid out. Given the game theory behind the Ghost network, the probability that the system will need to mint new Ghost to pay rewards is extremely low. Since Ghost deposited into The Tap are sent to a burn address and Ghost is constantly being locked in the liquidity pool through the The Shore contract, Ghost is the only deflationary daily ROI platform. The best strategy for Ghost is to focus on real world adoption by building out your team through direct referrals, as you will receive bonus rewards from referrals on their deposits and downline bonuses from players they refer based on the amount of WAVE Token held in your wallet"
     },
 
@@ -476,7 +476,7 @@
     }
 
     ,
-    "TheShoreisTheSplashNetwork’ssolutionforplayersthatwantbenefitfromnon-inflationaryyieldfarmingthroughaddingliquiditytoSplash": {
+    "TheShoreisTheGhostNetwork’ssolutionforplayersthatwantbenefitfromnon-inflationaryyieldfarmingthroughaddingliquiditytoGhost": {
         "1": "The Shore is The Ghost Network’s solution for players that want benefit from non-inflationary yield farming through adding liquidity to Ghost"
     },
     "COMPOUND": {
@@ -504,7 +504,7 @@
     "DropBalance": {
         "1": "Drop Balance"
     },
-    "TheShoreisTheSplashNetwork’ssolutionforplayersthatwantbenefitfromnoninflationaryyieldfarmingthroughaddingliquiditytoSplash.Herearethenumbers": {
+    "TheShoreisTheGhostNetwork’ssolutionforplayersthatwantbenefitfromnoninflationaryyieldfarmingthroughaddingliquiditytoGhost.Herearethenumbers": {
         "1": "The Shore is The Ghost Network’s solution for players that want benefit from non-inflationary yield farming through adding liquidity to Ghost. Here are the numbers"
     },
     "UserCount": {
@@ -529,7 +529,7 @@
 
 
 
-    "BuySplash": {
+    "BuyGhost": {
         "1": "Buy Ghost"
     },
     "SplassivePresaleDetails": {
@@ -562,7 +562,7 @@
     "PreSale": {
         "1": "PreSale"
     },
-    "EstimatereceivedSplash": {
+    "EstimatereceivedGhost": {
         "1": "Estimate received Ghost"
     },
     "BUYFTM": {
